@@ -22,7 +22,7 @@ function draw() {
         line(0, i*6*zoom, width, i*6*zoom);
     }
     fill(0);
-    scale(zoom);
+    scale(zoom/10);
     image(hus,0,0);
 
 }
