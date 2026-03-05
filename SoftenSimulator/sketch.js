@@ -1,10 +1,13 @@
 
 
 async function setup() {
-    hus = await loadImage('sprites/hus.png');
+    husimg = await loadImage('sprites/hus.png');
     createCanvas(800, 600);
-
-    zoom = 60;
+    loadNames();
+    z0 = 60;
+    zoom = z0;
+    xscroll = 10;
+    yscroll = 0;
     grid = [];
     for (let i = 0; i<100; i++) {
         grid.push([]);
@@ -12,18 +15,34 @@ async function setup() {
             grid[i].push(false);
         }
     }
+    buildings = {
+        huse: [new Hus(4,4)]
+    }
+
+    money = 5000;
+    housing = 10;
+    population = [];
+    for (let i=0; i<4; i++) {
+        population.push(new Human(30));
+    }
+
 }
 
 function draw() {
+    translate(xscroll, yscroll);
+    scale(zoom/z0);
     background(10,100,10);
     fill(0, 0, 0, 100);
     for (let i=0; i<grid.length; i++) {
-        line(i*zoom, 0, i*zoom, height);
-        line(0, i*zoom, width, i*zoom);
+        line(i*z0, 0, i*z0, 100*z0);
+        line(0, i*z0, 100*z0, i*z0);
     }
     fill(0);
-    scale(zoom/60);
-    image(hus,0,0);
+    
+
+    for (let i=0; i<buildings.huse.length; i++) {
+        buildings.huse[i].draw();
+    }
 
 }
 
@@ -34,4 +53,16 @@ function keyPressed() {
     if (key == "-") {
         zoom -= 1;
     }
+}
+
+function mouseWheel(event) {
+    xscroll -= event.deltaX;
+    yscroll -= event.deltaY;
+}
+
+function mouseClicked() {
+    let x = floor((mouseX-xscroll)/zoom);
+    let y = floor((mouseY-yscroll)/zoom);
+
+    buildings.huse.push(new Hus(x,y));
 }
