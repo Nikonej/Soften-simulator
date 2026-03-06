@@ -6,7 +6,7 @@ class Building {
         this.sizey = sizey;
         for (let i = 0; i < this.sizex; i++){
             for (let j = 0; j < this.sizey; j++){
-                grid[this.x+i][this.y+j]=true
+                grid[this.x+i][this.y+j] = true;
             }
         }
     }
