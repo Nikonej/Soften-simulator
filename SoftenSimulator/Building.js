@@ -17,9 +17,10 @@ class Building {
 }
 
 class Hus extends Building {
+    static sizex = 3;
+    static sizey = 2;
     constructor(x, y, sizex, sizey) {
         super(x, y,sizex, sizey);
-
     }
 
     draw() {

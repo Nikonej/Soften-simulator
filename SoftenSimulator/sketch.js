@@ -69,9 +69,11 @@ function mouseWheel(event) {
 function mouseClicked() {
     let x = floor((mouseX-xscroll)/zoom);
     let y = floor((mouseY-yscroll)/zoom);
+    let selected = Hus;
+    let selectedarray = buildings.huse;
     if (grid[x][y] == false){
-        if (Room(x,y,3,2)){
-            buildings.huse.push(new Hus(x,y,3,2));
+        if (Room(x,y,selected.sizex,selected.sizey)){
+            selectedarray.push(new selected(x,y,selected.sizex,selected.sizey));
         }
     }
 }
