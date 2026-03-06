@@ -12,6 +12,7 @@ class Building {
 class Hus extends Building {
     constructor(x, y) {
         super(x, y);
+        
     }
 
     draw() {
