@@ -1,14 +1,40 @@
 class Human {
     constructor(age) {
         this.age = age;
+        this.productivity = 1;
         this.firstName = firstNames[floor(random(0,firstNames.length))];
         this.lastName = lastNames[floor(random(0,lastNames.length))];
-        print(this.firstName);
-        print(this.lastName);
+        if (this.age == 0) {
+            print(this.firstName + " " + this.lastName + " was born");
+        }
+        
     }
 
     update() {
-        
+        this.age += 10;
+        // formering
+        if (population.length < housing) {
+            if (15 < this.age && this.age < 50) {
+                if (random(0,20) < 10) {
+                    this.reproduce();
+                }
+            }
+        }
+
+        //death:
+        if (this.age > 50) {
+            if (random(50,100) < this.age) {
+                this.die()
+            }
+        }
+    }
+
+    reproduce() {
+        population.push(new Human(0));
+    }
+
+    die() {
+        print("dead");
     }
 
     
