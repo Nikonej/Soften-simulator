@@ -2,6 +2,7 @@
 
 async function setup() {
     husimg = await loadImage('sprites/hus.png');
+    kontor1img = await loadImage('sprites/kontor1.png');
     createCanvas(800, 600);
     loadNames();
     z0 = 60;
@@ -71,8 +72,8 @@ function keyPressed() {
 }
 
 function mouseWheel(event) {
-    xscroll -= event.deltaX;
-    yscroll -= event.deltaY;
+    //xscroll -= event.deltaX;
+    //yscroll -= event.deltaY;
 }
 
 
