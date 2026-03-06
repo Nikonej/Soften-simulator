@@ -7,6 +7,10 @@ class Human {
         print(this.lastName);
     }
 
+    update() {
+        
+    }
+
     
 }
 

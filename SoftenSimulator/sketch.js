@@ -29,6 +29,7 @@ async function setup() {
 }
 
 function draw() {
+    frameRate(30);
     translate(xscroll, yscroll);
     scale(zoom/z0);
     background(10,100,10);
@@ -42,6 +43,12 @@ function draw() {
 
     for (let i=0; i<buildings.huse.length; i++) {
         buildings.huse[i].draw();
+    }
+
+    if (frameCount % 300 == 0) {
+        for (let i = 0; i<population.length; i++) {
+            population[i].update();
+        }
     }
 
 }
