@@ -35,7 +35,6 @@ function draw() {
     scale(zoom/z0);
     background(10,100,10);
     fill(0, 0, 0, 100);
-    GUI();
     for (let i=0; i<grid.length; i++) {
         line(i*z0, 0, i*z0, 100*z0);
         line(0, i*z0, 100*z0, i*z0);
@@ -50,6 +49,7 @@ function draw() {
     if (frameCount % 30 == 0) {
         update();
     }
+    GUI();
 }
 
 function update() {
@@ -71,12 +71,6 @@ function keyPressed() {
         zoom -= 1;
     }
 }
-
-function mouseWheel(event) {
-    //xscroll -= event.deltaX;
-    //yscroll -= event.deltaY;
-}
-
 
 
 function Room(x , y, selected){
