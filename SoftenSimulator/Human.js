@@ -11,7 +11,7 @@ class Human {
     }
 
     update(i) {
-        this.age += 10;
+        this.age += 4;
         // formering
         if (population.length < housing) {
             if (15 < this.age && this.age < 50) {
@@ -37,7 +37,10 @@ class Human {
         print(this.firstName + " " + this.lastName + " has died");
         population.splice(i,1);
         print(population.length);
-        population[i].update(i);
+        if (i < population.length) {
+            population[i].update(i);
+        }
+        
     }
 
     
