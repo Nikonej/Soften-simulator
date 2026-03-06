@@ -24,7 +24,7 @@ class Human {
         //death:
         if (this.age > 50) {
             if (random(50,100) < this.age) {
-                this.die(i)
+                this.die(i);
             }
         }
     }
@@ -33,8 +33,11 @@ class Human {
         population.push(new Human(0));
     }
 
-    die() {
-        print("dead");
+    die(i) {
+        print(this.firstName + " " + this.lastName + " has died");
+        population.splice(i,1);
+        print(population.length);
+        population[i].update(i);
     }
 
     
