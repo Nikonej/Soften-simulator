@@ -1,9 +1,9 @@
 class Building {
-    constructor(x, y, sizex, sizey) {
+    constructor(x, y, selected) {
         this.x = x;
         this.y = y;
-        this.sizex = sizex;
-        this.sizey = sizey;
+        this.sizex = selected.sizex;
+        this.sizey = selected.sizey;
         for (let i = 0; i < this.sizex; i++){
             for (let j = 0; j < this.sizey; j++){
                 grid[this.x+i][this.y+j] = true;
@@ -27,6 +27,8 @@ class Hus extends Building {
         image(husimg,this.x*z0, this.y*z0);
     }
 }
+
+
 /*
 this.sizex = 3;
 this.sizey = 3;

@@ -72,14 +72,16 @@ function mouseClicked() {
     let selected = Hus;
     let selectedarray = buildings.huse;
     if (grid[x][y] == false){
-        if (Room(x,y,selected.sizex,selected.sizey)){
-            selectedarray.push(new selected(x,y,selected.sizex,selected.sizey));
+        if (Room(x,y,selected)){
+            selectedarray.push(new selected(x,y,selected));
         }
     }
 }
 
-function Room(x , y, sizex, sizey){
+function Room(x , y, selected){
     let result = true
+    let sizex = selected.sizex;
+    let sizey = selected.sizey;
     if (x==0){
       for (let i = 0; i < sizex + 1; i++){
         for (let j = 0; j < sizey; j++){
