@@ -16,7 +16,7 @@ async function setup() {
         }
     }
     buildings = {
-        huse: [new Hus(4,4)]
+        huse: [new Hus(4, 4, 3, 2)]
     }
 
     money = 5000;
@@ -50,7 +50,6 @@ function draw() {
             population[i].update();
         }
     }
-
 }
 
 function keyPressed() {
@@ -70,6 +69,33 @@ function mouseWheel(event) {
 function mouseClicked() {
     let x = floor((mouseX-xscroll)/zoom);
     let y = floor((mouseY-yscroll)/zoom);
+    if (grid[x][y] == false){
+        if (Room(x,y,3,2)){
+            buildings.huse.push(new Hus(x,y,3,2));
+        }
+    }
+}
 
-    buildings.huse.push(new Hus(x,y));
+function Room(x , y, sizex, sizey){
+    let result = true
+    if (x==0){
+      for (let i = 0; i < sizex + 1; i++){
+        for (let j = 0; j < sizey; j++){
+            if (grid[x+i][y+j] == true){
+                result = false;
+                return result;
+            }
+        }
+    }  
+    } else {
+        for (let i = -1; i < sizex + 1; i++){
+            for (let j = 0; j < sizey; j++){
+                if (grid[x+i][y+j] == true){
+                    result = false;
+                    return result;
+                }
+            }
+        }
+    }
+    return result;
 }
