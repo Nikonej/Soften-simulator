@@ -34,6 +34,7 @@ function draw() {
     scale(zoom/z0);
     background(10,100,10);
     fill(0, 0, 0, 100);
+    GUI();
     for (let i=0; i<grid.length; i++) {
         line(i*z0, 0, i*z0, 100*z0);
         line(0, i*z0, 100*z0, i*z0);
@@ -74,17 +75,7 @@ function mouseWheel(event) {
     yscroll -= event.deltaY;
 }
 
-function mouseClicked() {
-    let x = floor((mouseX-xscroll)/zoom);
-    let y = floor((mouseY-yscroll)/zoom);
-    let selected = Hus;
-    let selectedarray = buildings.huse;
-    if (grid[x][y] == false){
-        if (Room(x,y,selected)){
-            selectedarray.push(new selected(x,y,selected));
-        }
-    }
-}
+
 
 function Room(x , y, selected){
     let result = true
