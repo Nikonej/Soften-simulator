@@ -10,7 +10,7 @@ class Human {
         
     }
 
-    update() {
+    update(i) {
         this.age += 10;
         // formering
         if (population.length < housing) {
@@ -24,7 +24,7 @@ class Human {
         //death:
         if (this.age > 50) {
             if (random(50,100) < this.age) {
-                this.die()
+                this.die(i)
             }
         }
     }

@@ -47,7 +47,7 @@ function draw() {
 
     if (frameCount % 300 == 0) {
         for (let i = 0; i<population.length; i++) {
-            population[i].update();
+            population[i].update(i);
         }
     }
 }
