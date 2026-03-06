@@ -16,14 +16,14 @@ async function setup() {
         }
     }
     buildings = {
-        huse: [new Hus(4, 4, 3, 2)]
+        huse: [new Hus(5, 4, Hus), new Hus(1, 4, Hus)]
     }
 
     money = 5000;
     housing = 10;
     population = [];
     for (let i=0; i<4; i++) {
-        population.push(new Human(30));
+        population.push(new Human(random(15,45)));
     }
 
 }
@@ -46,13 +46,14 @@ function draw() {
         buildings.huse[i].draw();
     }
 
-    if (frameCount % 300 == 0) {
+    if (frameCount % 30 == 0) {
         update();
     }
 }
 
 function update() {
-
+    housing = 0;
+    housing += 4*buildings.huse.length;
 
 
 
