@@ -1,7 +1,7 @@
 xselscroll = 0;
 function GUI(){
-    rect(0 - xscroll, 500 - yscroll, 800, 200)
-    image(husimg, 10 - xscroll + xselscroll, 550 - yscroll, 60, 40)
+    rect((0 - xscroll)*z0/zoom, (500 - yscroll)*z0/zoom, 800*z0/zoom, 200)
+    image(husimg, (10 - xscroll + xselscroll)*z0/zoom, 550 - yscroll, 60, 40)
     image(kontor1img, 90 - xscroll + xselscroll, 550 - yscroll, 60, 40)
 }
 
@@ -14,7 +14,7 @@ function mouseClicked() {
             selectedarray = buildings.huse;
         } else if (mouseX - xselscroll >= 90 && mouseX - xselscroll <= 150){
             selected = Kontor;
-            selectedarray = buildings.huse;
+            selectedarray = buildings.kontorer;
 
         }
     } else {

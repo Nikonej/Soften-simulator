@@ -49,6 +49,10 @@ function draw() {
         buildings.huse[i].draw();
     }
 
+    for (let i=0; i<buildings.kontorer.length; i++) {
+        buildings.kontorer[i].draw();
+    }
+
     if (frameCount % 30 == 0) {
         update();
     }
