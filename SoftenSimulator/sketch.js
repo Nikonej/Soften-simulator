@@ -3,12 +3,14 @@
 async function setup() {
     husimg = await loadImage('sprites/hus.png');
     kontor1img = await loadImage('sprites/kontor1.png');
+    constructionimg = await loadImage('sprites/construction site.png');
     createCanvas(800, 600);
     loadNames();
     z0 = 60;
     zoom = z0;
     xscroll = 10;
     yscroll = 0;
+    time = 0;
     grid = [];
     for (let i = 0; i<100; i++) {
         grid.push([]);
@@ -53,6 +55,8 @@ function draw() {
 }
 
 function update() {
+    time++;
+    print(time);
     housing = 0;
     housing += 4*buildings.huse.length;
 

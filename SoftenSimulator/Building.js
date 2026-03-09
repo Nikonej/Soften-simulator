@@ -14,13 +14,24 @@ class Building {
     draw() {
 
     }
+
+    update() {
+
+    }
+}
+
+class Constructionsite extends Building {
+    constructor(x, y, selected) {
+        super(x, y, selected);
+    }
 }
 
 class Hus extends Building {
     static sizex = 3;
     static sizey = 2;
-    constructor(x, y, sizex, sizey) {
-        super(x, y,sizex, sizey);
+  //  static buildtime = 3;
+    constructor(x, y, selected) {
+        super(x, y, selected);
     }
 
     draw() {
