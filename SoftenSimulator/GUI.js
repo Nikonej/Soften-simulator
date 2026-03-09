@@ -6,7 +6,7 @@ function GUI(){
         fill(255)
         textSize(14*z)
         text("Population: " + population.length, (10 - xscroll)*z, (512 - yscroll)*z)
-        text("money: " + money, (100 - xscroll)*z, (512 - yscroll)*z)
+        text("money: " + money, (200 - xscroll)*z, (512 - yscroll)*z)
     pop()
     image(husimg, (10 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60*z, 40*z)
     image(kontor1img, (90 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60 * z, 40 * z)
