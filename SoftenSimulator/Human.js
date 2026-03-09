@@ -36,13 +36,20 @@ class Human {
                     if (prioriteretArbejde[i][j].maxJobs > prioriteretArbejde[i][j].activeJobs) {
                         prioriteretArbejde[i][j].activeJobs++;
                         this.job = prioriteretArbejde[i][j];
-                        this.job.x++;
                         i = prioriteretArbejde.length;
                         break;
                     }
                 }
             }
         }
+        //work
+        if (this.job != "unemployed") {
+            this.work();
+        }
+    }
+
+    work() {
+        money += this.job.cashProd
     }
 
     reproduce() {
