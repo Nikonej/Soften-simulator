@@ -38,7 +38,18 @@ class Hus extends Building {
         image(husimg,this.x*z0, this.y*z0);
     }
 }
+class Kontor extends Building {
+    static sizex = 4;
+    static sizey = 4;
+  //  static buildtime = 3;
+    constructor(x, y, selected) {
+        super(x, y, selected);
+    }
 
+    draw() {
+        image(kontor1img,this.x*z0, this.y*z0);
+    }
+}
 
 /*
 this.sizex = 3;

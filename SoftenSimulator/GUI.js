@@ -13,6 +13,8 @@ function mouseClicked() {
             selected = Hus;
             selectedarray = buildings.huse;
         } else if (mouseX - xselscroll >= 90 && mouseX - xselscroll <= 150){
+            selected = Kontor;
+            selectedarray = buildings.huse;
 
         }
     } else {
