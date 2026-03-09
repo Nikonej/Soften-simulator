@@ -48,6 +48,7 @@ class Kontor extends Building {
         super(x, y, selected);
         this.activeJobs = 0;
         this.maxJobs = 6;
+        this.cashProd = 50;
     }
 
     draw() {
