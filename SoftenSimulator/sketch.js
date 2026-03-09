@@ -19,7 +19,8 @@ async function setup() {
         }
     }
     buildings = {
-        huse: [new Hus(5, 4, Hus), new Hus(1, 4, Hus)]
+        huse: [new Hus(5, 4, Hus), new Hus(1, 4, Hus)],
+        kontorer: []
     }
 
     money = 5000;
