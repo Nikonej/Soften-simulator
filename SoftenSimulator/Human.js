@@ -2,10 +2,11 @@ class Human {
     constructor(age) {
         this.age = age;
         this.productivity = 1;
+        this.job = "unemployed"
         this.firstName = firstNames[floor(random(0,firstNames.length))];
         this.lastName = lastNames[floor(random(0,lastNames.length))];
         if (this.age == 0) {
-            print(this.firstName + " " + this.lastName + " was born");
+        //    print(this.firstName + " " + this.lastName + " was born");
         }
         
     }
@@ -27,6 +28,21 @@ class Human {
                 this.die(i);
             }
         }
+
+        //find job
+        if (this.age > 13 && this.job == "unemployed") {
+            for (let i=0; i<prioriteretArbejde.length; i++) {
+                for (let j = 0; j<prioriteretArbejde[i].length; j++) {
+                    if (prioriteretArbejde[i][j].maxJobs > prioriteretArbejde[i][j].activeJobs) {
+                        prioriteretArbejde[i][j].activeJobs++;
+                        this.job = prioriteretArbejde[i][j];
+                        this.job.x++;
+                        i = prioriteretArbejde.length;
+                        break;
+                    }
+                }
+            }
+        }
     }
 
     reproduce() {
@@ -34,7 +50,11 @@ class Human {
     }
 
     die(i) {
-        print(this.firstName + " " + this.lastName + " has died");
+     //   print(this.firstName + " " + this.lastName + " has died");
+        if (this.job != "unemployed") {
+            this.job.activeJobs--;
+        }
+        
         population.splice(i,1);
         print(population.length);
         if (i < population.length) {
