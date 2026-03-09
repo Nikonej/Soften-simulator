@@ -43,7 +43,7 @@ function draw() {
         line(0, i*z0, 100*z0, i*z0);
     }
     fill(0);
-    
+
 
     for (let i=0; i<buildings.huse.length; i++) {
         buildings.huse[i].draw();

@@ -1,8 +1,14 @@
 xselscroll = 0;
 function GUI(){
-    rect((0 - xscroll)*z0/zoom, (500 - yscroll)*z0/zoom, 800*z0/zoom, 200)
-    image(husimg, (10 - xscroll + xselscroll)*z0/zoom, 550 - yscroll, 60, 40)
-    image(kontor1img, 90 - xscroll + xselscroll, 550 - yscroll, 60, 40)
+    z = z0/zoom
+    rect((0 - xscroll)*z, (500 - yscroll)*z, 800*z, 200*z)
+    push()
+        fill(255)
+        text("Population: " + population.length, (10 - xscroll)*z, (510 - yscroll)*z)
+        text("money: " + money, (100 - xscroll)*z, (510 - yscroll)*z)
+    pop()
+    image(husimg, (10 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60*z, 40*z)
+    image(kontor1img, (90 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60 * z, 40 * z)
 }
 
 function mouseClicked() {
