@@ -26,8 +26,9 @@ function mouseClicked() {
         }
     } else {
         if (grid[x][y] == false){
-            if (Room(x,y,selected)){
+            if (Room(x,y,selected) && selected.price < money){
                 selectedarray.push(new selected(x, y, selected));
+                money -= selected.price;
             }
         }
     }

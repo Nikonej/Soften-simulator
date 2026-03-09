@@ -29,6 +29,7 @@ class Constructionsite extends Building {
 class Hus extends Building {
     static sizex = 3;
     static sizey = 2;
+    static price = 1000;
   //  static buildtime = 3;
     constructor(x, y, selected) {
         super(x, y, selected);
@@ -42,6 +43,7 @@ class Hus extends Building {
 class Kontor extends Building {
     static sizex = 4;
     static sizey = 4;
+    static price = 4000;
     
   //  static buildtime = 3;
     constructor(x, y, selected) {
