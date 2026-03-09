@@ -22,6 +22,7 @@ async function setup() {
         huse: [new Hus(5, 4, Hus), new Hus(1, 4, Hus)],
         kontorer: []
     }
+    print(buildings.kontorer)
 
     money = 5000;
     housing = 10;
@@ -29,6 +30,7 @@ async function setup() {
     for (let i=0; i<4; i++) {
         population.push(new Human(random(15,45)));
     }
+    prioriteretArbejde = [buildings.kontorer]
 
 }
 
@@ -61,7 +63,7 @@ function draw() {
 
 function update() {
     time++;
-    print(time);
+   // print(time);
     housing = 0;
     housing += 4*buildings.huse.length;
 
