@@ -4,6 +4,7 @@ function GUI(){
     rect((0 - xscroll)*z, (500 - yscroll)*z, 800*z, 200*z)
     push()
         fill(255)
+        textSize(14*z)
         text("Population: " + population.length, (10 - xscroll)*z, (510 - yscroll)*z)
         text("money: " + money, (100 - xscroll)*z, (510 - yscroll)*z)
     pop()
