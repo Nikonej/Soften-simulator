@@ -21,6 +21,26 @@ function GUI(){
             showStats(Hotel);
         }
     }
+    switch (selected){
+        case Hus:
+            push;
+                fill(170, 240, 30, 100);
+                rect((10 - xscroll + xselscroll)*z, (550 - yscroll)*z,60*z,40*z);
+            pop;
+        break;
+        case Kontor:
+            push;
+                fill(170, 240, 30, 100);
+                rect((90 - xscroll + xselscroll)*z, (550 - yscroll)*z,60*z,40*z);
+            pop;
+        break;
+        case Hotel:
+            push;
+                fill(170, 240, 30, 100);
+                rect((170 - xscroll + xselscroll)*z, (550 - yscroll)*z,60*z,40*z);
+            pop;
+        break;
+    }
 }
 
 function showStats(KK) {
