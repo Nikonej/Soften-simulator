@@ -46,12 +46,21 @@ class Hus extends Building {
     static sizey = 2;
     static price = 1000;
     static buildtime = 1;
+    static housing = 4
     constructor(x, y, selected) {
         super(x, y, selected);
     }
 
     draw() {
         image(husimg, this.x*z0, this.y*z0);
+    }
+
+    static display(x,y) {
+        fill(0);
+        textSize(14*z);
+        text("cost: " + Hus.price, (x+5)*z, (y+12)*z);
+        text("buildtime: " + Hus.buildtime, (x+5)*z, (y+24)*z);
+        text("housing: " + Hus.housing, (x+5)*z, (y+36)*z);
     }
 }
 
@@ -60,6 +69,7 @@ class Hotel extends Building {
     static sizey = 6;
     static price = 10000;
     static buildtime = 10;
+    static housing = 40;
     constructor(x, y, selected) {
         super(x, y, selected);
     }
@@ -67,23 +77,41 @@ class Hotel extends Building {
     draw() {
         image(hotel1img, this.x*z0, this.y*z0, 240, 360);
     }
+
+    static display(x,y) {
+        fill(0);
+        textSize(14*z);
+        text("cost: " + Hotel.price, (x+5)*z, (y+12)*z);
+        text("buildtime: " + Hotel.buildtime, (x+5)*z, (y+24)*z);
+        text("housing: " + Hotel.housing, (x+5)*z, (y+36)*z);
+    }
 }
 
 class Kontor extends Building {
     static sizex = 3;
     static sizey = 3;
     static price = 4000;
-    
+    static maxJobs = 6
+    static income = 300;    
     static buildtime = 3;
     constructor(x, y, selected) {
         super(x, y, selected);
         this.activeJobs = 0;
-        this.maxJobs = 6;
-        this.cashProd = 50;
+        this.maxJobs = Kontor.maxJobs;
+        this.cashProd = Kontor.income/Kontor.maxJobs;
     }
 
     draw() {
         image(kontor1img,this.x*z0, this.y*z0);
+    }
+
+    static display(x,y) {
+        fill(0);
+        textSize(14*z);
+        text("cost: " + Kontor.price, (x+5)*z, (y+12)*z);
+        text("buildtime: " + Kontor.buildtime, (x+5)*z, (y+24)*z);
+        text("workers " + Kontor.maxJobs, (x+5)*z, (y+36)*z);
+        text("income: " + Kontor.income, (x+5)*z, (y+48)*z);
     }
 }
 
