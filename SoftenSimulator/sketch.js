@@ -8,6 +8,7 @@ async function setup() {
     hospitalimg = await loadImage('sprites/Hospital.png');
     createCanvas(800, 600);
     loadNames();
+    selected = Hus;
     z0 = 60;
     zoom = z0;
     xscroll = 10;
