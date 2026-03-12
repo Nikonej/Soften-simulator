@@ -75,6 +75,7 @@ function update() {
    // print(time);
     housing = 0;
     housing += 4*buildings.huse.length;
+    housing += 40*buildings.hoteller.length;
 
     for(building in buildings) {
         for (let i=0; i<buildings[building].length; i++) {
