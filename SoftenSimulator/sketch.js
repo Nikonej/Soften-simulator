@@ -5,6 +5,7 @@ async function setup() {
     hotel1img = await loadImage('sprites/Hotel1.png');
     kontor1img = await loadImage('sprites/kontor2.png');
     constructionimg = await loadImage('sprites/construction site.png');
+    hospitalimg = await loadImage('sprites/Hospital.png');
     createCanvas(800, 600);
     loadNames();
     z0 = 60;
