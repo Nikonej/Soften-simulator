@@ -12,15 +12,6 @@ function GUI(){
     image(kontor1img, (90 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60 * z, 40 * z)
     image(hotel1img, (170 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60 * z, 40 * z)
 
-    if (mouseY>500){
-        if (mouseX - xselscroll >= 10 && mouseX - xselscroll <= 70){
-            showStats(Hus);
-        } else if (mouseX - xselscroll >= 90 && mouseX - xselscroll <= 150){
-            showStats(Kontor);
-        } else if (mouseX - xselscroll >= 170 && mouseX - xselscroll <= 230){
-            showStats(Hotel);
-        }
-    }
     switch (selected){
         case Hus:
             push;
@@ -40,6 +31,16 @@ function GUI(){
                 rect((170 - xscroll + xselscroll)*z, (550 - yscroll)*z,60*z,40*z);
             pop;
         break;
+    }
+
+    if (mouseY>500){
+        if (mouseX - xselscroll >= 10 && mouseX - xselscroll <= 70){
+            showStats(Hus);
+        } else if (mouseX - xselscroll >= 90 && mouseX - xselscroll <= 150){
+            showStats(Kontor);
+        } else if (mouseX - xselscroll >= 170 && mouseX - xselscroll <= 230){
+            showStats(Hotel);
+        }
     }
 }
 
