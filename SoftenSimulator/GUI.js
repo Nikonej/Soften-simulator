@@ -11,6 +11,7 @@ function GUI(){
     image(husimg, (10 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60*z, 40*z)
     image(kontor1img, (90 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60 * z, 40 * z)
     image(hotel1img, (170 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60 * z, 40 * z)
+    image(hospitalimg, (250 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60 * z, 40 * z)
 
     switch (selected){
         case Hus:
@@ -31,6 +32,12 @@ function GUI(){
                 rect((170 - xscroll + xselscroll)*z, (550 - yscroll)*z,60*z,40*z);
             pop;
         break;
+        case Hospital:
+            push;
+                fill(170, 240, 30, 100);
+                rect((250 - xscroll + xselscroll)*z, (550 - yscroll)*z,60*z,40*z);
+            pop;
+        break;
     }
 
     if (mouseY>500){
@@ -40,6 +47,8 @@ function GUI(){
             showStats(Kontor);
         } else if (mouseX - xselscroll >= 170 && mouseX - xselscroll <= 230){
             showStats(Hotel);
+        } else if (mouseX - xselscroll >= 250 && mouseX - xselscroll <= 310){
+            showStats(Hospital);
         }
     }
 }
@@ -64,6 +73,9 @@ function mouseClicked() {
         } else if (mouseX - xselscroll >= 170 && mouseX - xselscroll <= 230){
             selected = Hotel;
             selectedarray = buildings.hoteller;
+        } else if (mouseX - xselscroll >= 250 && mouseX - xselscroll <= 310){
+            selected = Hospital;
+            selectedarray = buildings.hospitaler;
         }
     } else {
         if (grid[x][y] == false){

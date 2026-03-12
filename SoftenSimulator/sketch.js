@@ -25,7 +25,8 @@ async function setup() {
         huse: [new Hus(5, 4, Hus), new Hus(1, 4, Hus)],
         kontorer: [],
         constructionsite: [],
-        hoteller: []
+        hoteller: [],
+        hospitaler: []
     }
     print(buildings.kontorer)
 
