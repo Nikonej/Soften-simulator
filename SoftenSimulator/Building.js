@@ -56,8 +56,8 @@ class Hus extends Building {
 }
 
 class Kontor extends Building {
-    static sizex = 4;
-    static sizey = 4;
+    static sizex = 3;
+    static sizey = 3;
     static price = 4000;
     
     static buildtime = 3;

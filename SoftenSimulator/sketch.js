@@ -2,7 +2,7 @@
 
 async function setup() {
     husimg = await loadImage('sprites/hus.png');
-    kontor1img = await loadImage('sprites/kontor1.png');
+    kontor1img = await loadImage('sprites/kontor2.png');
     constructionimg = await loadImage('sprites/construction site.png');
     createCanvas(800, 600);
     loadNames();
