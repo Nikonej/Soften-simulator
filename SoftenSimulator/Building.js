@@ -55,6 +55,20 @@ class Hus extends Building {
     }
 }
 
+class Hotel extends Building {
+    static sizex = 4;
+    static sizey = 6;
+    static price = 10000;
+    static buildtime = 10;
+    constructor(x, y, selected) {
+        super(x, y, selected);
+    }
+
+    draw() {
+        image(hotel1img, this.x*z0, this.y*z0, 240, 360);
+    }
+}
+
 class Kontor extends Building {
     static sizex = 3;
     static sizey = 3;

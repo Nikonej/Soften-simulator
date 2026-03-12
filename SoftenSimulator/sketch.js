@@ -2,6 +2,7 @@
 
 async function setup() {
     husimg = await loadImage('sprites/hus.png');
+    hotel1img = await loadImage('sprites/Hotel1.png');
     kontor1img = await loadImage('sprites/kontor2.png');
     constructionimg = await loadImage('sprites/construction site.png');
     createCanvas(800, 600);
@@ -21,7 +22,8 @@ async function setup() {
     buildings = {
         huse: [new Hus(5, 4, Hus), new Hus(1, 4, Hus)],
         kontorer: [],
-        constructionsite: []
+        constructionsite: [],
+        hoteller: []
     }
     print(buildings.kontorer)
 

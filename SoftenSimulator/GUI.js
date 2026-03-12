@@ -10,6 +10,7 @@ function GUI(){
     pop()
     image(husimg, (10 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60*z, 40*z)
     image(kontor1img, (90 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60 * z, 40 * z)
+    image(hotel1img, (170 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60 * z, 40 * z)
 }
 
 function mouseClicked() {
@@ -22,7 +23,9 @@ function mouseClicked() {
         } else if (mouseX - xselscroll >= 90 && mouseX - xselscroll <= 150){
             selected = Kontor;
             selectedarray = buildings.kontorer;
-
+        } else if (mouseX - xselscroll >= 170 && mouseX - xselscroll <= 230){
+            selected = Hotel;
+            selectedarray = buildings.hoteller;
         }
     } else {
         if (grid[x][y] == false){
