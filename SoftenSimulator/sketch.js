@@ -20,7 +20,8 @@ async function setup() {
     }
     buildings = {
         huse: [new Hus(5, 4, Hus), new Hus(1, 4, Hus)],
-        kontorer: []
+        kontorer: [],
+        constructionsite: []
     }
     print(buildings.kontorer)
 
@@ -47,6 +48,13 @@ function draw() {
     fill(0);
 
 
+    for(building in buildings) {
+        for (let i=0; i<buildings[building].length; i++) {
+            buildings[building][i].draw();
+        }
+    }
+
+/*
     for (let i=0; i<buildings.huse.length; i++) {
         buildings.huse[i].draw();
     }
@@ -54,6 +62,7 @@ function draw() {
     for (let i=0; i<buildings.kontorer.length; i++) {
         buildings.kontorer[i].draw();
     }
+    */
 
     if (frameCount % 30 == 0) {
         update();
@@ -67,7 +76,11 @@ function update() {
     housing = 0;
     housing += 4*buildings.huse.length;
 
-
+    for(building in buildings) {
+        for (let i=0; i<buildings[building].length; i++) {
+            buildings[building][i].update(i);
+        }
+    }
 
     for (let i = 0; i<population.length; i++) {
         population[i].update(i);
