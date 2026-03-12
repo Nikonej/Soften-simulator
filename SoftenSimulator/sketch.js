@@ -80,10 +80,12 @@ function update() {
     }
     jobs = 0;
     jobs += buildings.kontorer.length*6;
+    
 
     for (let i = 0; i<population.length; i++) {
         population[i].update(i);
     }
+    print(workers);
 }
 
 function keyPressed() {
