@@ -11,6 +11,23 @@ function GUI(){
     image(husimg, (10 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60*z, 40*z)
     image(kontor1img, (90 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60 * z, 40 * z)
     image(hotel1img, (170 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60 * z, 40 * z)
+
+    if (mouseY>500){
+        if (mouseX - xselscroll >= 10 && mouseX - xselscroll <= 70){
+            showStats(Hus);
+        } else if (mouseX - xselscroll >= 90 && mouseX - xselscroll <= 150){
+            showStats(Kontor);
+        } else if (mouseX - xselscroll >= 170 && mouseX - xselscroll <= 230){
+            showStats(Hotel);
+        }
+    }
+}
+
+function showStats(KK) {
+    fill(100);
+    rect(mouseX*z, (mouseY-120)*z, 120*z, 120*z);
+    KK.display(mouseX, mouseY-120);
+
 }
 
 function mouseClicked() {
