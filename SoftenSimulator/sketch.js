@@ -95,7 +95,7 @@ function keyPressed() {
     if (key == "+") {
         zoom += 1;
     }
-    if (key == "-") {
+    if (key == "-" && zoom > 0) {
         zoom -= 1;
     }
 }
