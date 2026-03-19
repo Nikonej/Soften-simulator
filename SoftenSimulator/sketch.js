@@ -92,7 +92,7 @@ function update() {
     for (let i = 0; i<population.length; i++) {
         population[i].update(i);
     }
-    print(workers);
+   // print(workers);
 }
 
 function keyPressed() {
