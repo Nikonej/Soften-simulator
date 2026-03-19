@@ -37,7 +37,7 @@ async function setup() {
     for (let i=0; i<4; i++) {
         population.push(new Human(random(15,45)));
     }
-    prioriteretArbejde = [buildings.kontorer]
+    prioriteretArbejde = [buildings.kontorer, buildings.hospitaler];
 
 }
 
@@ -59,16 +59,6 @@ function draw() {
             buildings[building][i].draw();
         }
     }
-
-/*
-    for (let i=0; i<buildings.huse.length; i++) {
-        buildings.huse[i].draw();
-    }
-
-    for (let i=0; i<buildings.kontorer.length; i++) {
-        buildings.kontorer[i].draw();
-    }
-    */
 
     if (frameCount % 30 == 0) {
         update();
