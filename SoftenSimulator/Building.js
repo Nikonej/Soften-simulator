@@ -120,7 +120,7 @@ class Hospital extends Building {
     static sizey = 3;
     static price = 10000;
     static buildtime = 7;
-    static housing = 0;
+    static maxJobs = 6;
     constructor(x, y, selected) {
         super(x, y, selected);
     }
@@ -134,6 +134,6 @@ class Hospital extends Building {
         textSize(14*z);
         text("cost: " + Hospital.price, (x+5)*z, (y+12)*z);
         text("buildtime: " + Hospital.buildtime, (x+5)*z, (y+24)*z);
-        text("housing: " + Hospital.housing, (x+5)*z, (y+36)*z);
+        text("workers: " + Hospital.maxJobs, (x+5)*z, (y+36)*z);
     }
 }
