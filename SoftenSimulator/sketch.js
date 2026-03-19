@@ -16,6 +16,7 @@ async function setup() {
     workers = 0;
     money = 50000;
     housing = 10;
+
     grid = [];
     for (let i = 0; i<100; i++) {
         grid.push([]);
