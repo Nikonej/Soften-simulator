@@ -58,9 +58,9 @@ class Hus extends Building {
     static display(x,y) {
         fill(0);
         textSize(14*z);
-        text("cost: " + Hus.price, (x+5)*z, (y+12)*z);
-        text("buildtime: " + Hus.buildtime, (x+5)*z, (y+24)*z);
-        text("housing: " + Hus.housing, (x+5)*z, (y+36)*z);
+        text("cost: " + Hus.price, (x+5)*z - xscroll, (y+12)*z - yscroll);
+        text("buildtime: " + Hus.buildtime, (x+5)*z - xscroll, (y+24)*z - yscroll);
+        text("housing: " + Hus.housing, (x+5)*z - xscroll, (y+36)*z - yscroll);
     }
 }
 
@@ -81,9 +81,9 @@ class Hotel extends Building {
     static display(x,y) {
         fill(0);
         textSize(14*z);
-        text("cost: " + Hotel.price, (x+5)*z, (y+12)*z);
-        text("buildtime: " + Hotel.buildtime, (x+5)*z, (y+24)*z);
-        text("housing: " + Hotel.housing, (x+5)*z, (y+36)*z);
+        text("cost: " + Hotel.price, (x+5)*z - xscroll, (y+12)*z - yscroll);
+        text("buildtime: " + Hotel.buildtime, (x+5)*z - xscroll, (y+24)*z - yscroll);
+        text("housing: " + Hotel.housing, (x+5)*z - xscroll, (y+36)*z - yscroll);
     }
 }
 
@@ -108,10 +108,10 @@ class Kontor extends Building {
     static display(x,y) {
         fill(0);
         textSize(14*z);
-        text("cost: " + Kontor.price, (x+5)*z, (y+12)*z);
-        text("buildtime: " + Kontor.buildtime, (x+5)*z, (y+24)*z);
-        text("workers " + Kontor.maxJobs, (x+5)*z, (y+36)*z);
-        text("income: " + Kontor.income, (x+5)*z, (y+48)*z);
+        text("cost: " + Kontor.price, (x+5)*z - xscroll, (y+12)*z - yscroll);
+        text("buildtime: " + Kontor.buildtime, (x+5)*z - xscroll, (y+24)*z - yscroll);
+        text("workers " + Kontor.maxJobs, (x+5)*z - xscroll, (y+36)*z - yscroll);
+        text("income: " + Kontor.income, (x+5)*z - xscroll, (y+48)*z - yscroll);
     }
 }
 
@@ -132,8 +132,8 @@ class Hospital extends Building {
     static display(x,y) {
         fill(0);
         textSize(14*z);
-        text("cost: " + Hospital.price, (x+5)*z, (y+12)*z);
-        text("buildtime: " + Hospital.buildtime, (x+5)*z, (y+24)*z);
-        text("workers: " + Hospital.maxJobs, (x+5)*z, (y+36)*z);
+        text("cost: " + Hospital.price, (x+5)*z - xscroll, (y+12)*z - yscroll);
+        text("buildtime: " + Hospital.buildtime, (x+5)*z - xscroll, (y+24)*z - yscroll);
+        text("workers: " + Hospital.maxJobs, (x+5)*z - xscroll, (y+36)*z - yscroll);
     }
 }

@@ -55,7 +55,7 @@ function GUI(){
 
 function showStats(KK) {
     fill(100);
-    rect(mouseX*z, (mouseY-120)*z, 120*z, 120*z);
+    rect(mouseX*z - xscroll, (mouseY-120)*z - yscroll, 120*z, 120*z);
     KK.display(mouseX, mouseY-120);
 
 }
