@@ -14,6 +14,8 @@ async function setup() {
     yscroll = 0;
     time = 0;
     workers = 0;
+    money = 50000;
+    housing = 10;
     grid = [];
     for (let i = 0; i<100; i++) {
         grid.push([]);
@@ -32,8 +34,7 @@ async function setup() {
     selectedarray = buildings.huse;
     print(buildings.kontorer)
 
-    money = 5000;
-    housing = 10;
+    
     population = [];
     for (let i=0; i<4; i++) {
         population.push(new Human(random(15,45)));
