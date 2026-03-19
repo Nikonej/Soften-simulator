@@ -115,12 +115,25 @@ class Kontor extends Building {
     }
 }
 
-/*
-this.sizex = 3;
-this.sizey = 3;
-for (let i = 0; i < this.sizex; i++){
-    for (let j = 0; j < this.sizey; j++){
-        grid[x+i][y+j]=="true"
+class Hospital extends Building {
+    static sizex = 5;
+    static sizey = 3;
+    static price = 10000;
+    static buildtime = 7;
+    static housing = 0;
+    constructor(x, y, selected) {
+        super(x, y, selected);
+    }
+
+    draw() {
+        image(hospitalimg, this.x*z0, this.y*z0);
+    }
+
+    static display(x,y) {
+        fill(0);
+        textSize(14*z);
+        text("cost: " + Hospital.price, (x+5)*z, (y+12)*z);
+        text("buildtime: " + Hospital.buildtime, (x+5)*z, (y+24)*z);
+        text("housing: " + Hospital.housing, (x+5)*z, (y+36)*z);
     }
 }
-*/
