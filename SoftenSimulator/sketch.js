@@ -13,6 +13,7 @@ async function setup() {
     xscroll = 10;
     yscroll = 0;
     time = 0;
+    workers = 0;
     grid = [];
     for (let i = 0; i<100; i++) {
         grid.push([]);
@@ -68,10 +69,10 @@ function draw() {
 
 function update() {
     time++;
+    workers = 0;
+    jobs = 0;
    // print(time);
     housing = 0;
-    housing += 4*buildings.huse.length;
-    housing += 40*buildings.hoteller.length;
 
     for(building in buildings) {
         for (let i=0; i<buildings[building].length; i++) {
@@ -82,7 +83,8 @@ function update() {
     for (let i = 0; i<population.length; i++) {
         population[i].update(i);
     }
-   // print(workers);
+    print("workers: " + workers);
+    print("jobs: " + jobs);
 }
 
 function keyPressed() {

@@ -4,6 +4,9 @@ class Building {
         this.y = y;
         this.sizex = selected.sizex;
         this.sizey = selected.sizey;
+        this.housing = 0;
+        this.maxJobs = 0;
+        this.income = 0;
         for (let i = 0; i < this.sizex; i++){
             for (let j = 0; j < this.sizey; j++){
                 grid[this.x+i][this.y+j] = true;
@@ -16,6 +19,8 @@ class Building {
     }
 
     update(i) {
+        housing += this.housing;
+        jobs += this.maxJobs;
 
     }
 }
@@ -46,9 +51,10 @@ class Hus extends Building {
     static sizey = 2;
     static price = 1000;
     static buildtime = 1;
-    static housing = 4
+    static housing = 4;
     constructor(x, y, selected) {
         super(x, y, selected);
+        this.housing = Hus.housing;
     }
 
     draw() {
@@ -72,6 +78,7 @@ class Hotel extends Building {
     static housing = 40;
     constructor(x, y, selected) {
         super(x, y, selected);
+        this.housing = Hotel.housing;
     }
 
     draw() {
@@ -123,6 +130,9 @@ class Hospital extends Building {
     static maxJobs = 6;
     constructor(x, y, selected) {
         super(x, y, selected);
+        this.maxJobs = Hospital.maxJobs;
+        this.activeJobs = 0;
+        this.cashProd = 0;
     }
 
     draw() {

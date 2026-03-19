@@ -28,6 +28,10 @@ class Human {
                 this.die(i);
             }
         }
+        // tæl arbejdere
+        if (this.age > 13) {
+            workers++;
+        }
 
         //find job
         if (this.age > 13 && this.job == "unemployed") {
@@ -63,7 +67,6 @@ class Human {
         }
         
         population.splice(i,1);
-        print(population.length);
         if (i < population.length) {
             population[i].update(i);
         }
