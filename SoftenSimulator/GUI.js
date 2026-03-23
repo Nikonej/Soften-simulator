@@ -4,17 +4,21 @@ swap1 = 0;
 swap2 = 0;
 function GUI(){
     z = z0/zoom
-    rect((0 - xscroll)*z, (500 - yscroll)*z, 800*z, 200*z)
-    push()
-        fill(255)
-        textSize(14*z)
-        text("Population: " + population.length, (10 - xscroll)*z, (512 - yscroll)*z)
-        text("money: " + money, (200 - xscroll)*z, (512 - yscroll)*z)
-    pop()
-    image(husimg, (10 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60*z, 40*z)
-    image(kontor1img, (90 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60 * z, 40 * z)
-    image(hotel1img, (170 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60 * z, 40 * z)
-    image(hospitalimg, (250 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60 * z, 40 * z)
+    rect((0 - xscroll)*z, (500 - yscroll)*z, 800*z, 200*z);
+    push();
+        fill(255);
+        textSize(14*z);
+        text("Population: " + population.length, (10 - xscroll)*z, (512 - yscroll)*z);
+        text("money: " + money, (200 - xscroll)*z, (512 - yscroll)*z);
+    pop();
+    image(husimg, (10 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60*z, 40*z);
+    image(kontor1img, (90 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60 * z, 40 * z);
+    image(hotel1img, (170 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60 * z, 40 * z);
+    image(hospitalimg, (250 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60 * z, 40 * z);
+    push();
+        fill(170);
+        rect((330 - xscroll + xselscroll)*z,(550 - yscroll)*z, 60 * z, 40 * z);
+    pop();
     switch (selected){
         case Hus:
             push;
@@ -50,10 +54,16 @@ function GUI(){
             showStats(Hotel);
         } else if (mouseX - xselscroll >= 250 && mouseX - xselscroll <= 310 && mouseY >= 540){
             showStats(Hospital);
-        }
+        } 
     }
 }
 
+function showStats(KK) {
+    fill(100);
+    rect(mouseX*z - xscroll, (mouseY-120)*z - yscroll, 120*z, 120*z);
+    KK.display(mouseX, mouseY-120);
+
+}
 
 function mouseClicked() {
     let x = floor((mouseX-xscroll)/zoom);
