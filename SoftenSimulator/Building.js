@@ -5,6 +5,7 @@ class Building {
         this.sizex = selected.sizex;
         this.sizey = selected.sizey;
         this.housing = 0;
+        this.indbyggere = 0;
         this.maxJobs = 0;
         this.income = 0;
         for (let i = 0; i < this.sizex; i++){

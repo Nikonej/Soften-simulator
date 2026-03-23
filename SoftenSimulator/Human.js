@@ -1,23 +1,25 @@
 class Human {
-    constructor(age) {
+    constructor(age, home) {
         this.age = age;
         this.productivity = 1;
+        this.home = home;
+        home.indbyggere++;
         this.job = "unemployed"
         this.firstName = firstNames[floor(random(0,firstNames.length))];
         this.lastName = lastNames[floor(random(0,lastNames.length))];
-        if (this.age == 0) {
-        //    print(this.firstName + " " + this.lastName + " was born");
-        }
-        
     }
 
     update(i) {
         this.age += 4;
         // formering
-        if (population.length < housing) {
-            if (15 < this.age && this.age < 50) {
-                if (random(0,20) < 10) {
-                    this.reproduce();
+        if (15 < this.age && this.age < 50) {
+            if (random(0,20) < 10) {
+                for(building in buildings) {
+                    for (let i=0; i<buildings[building].length; i++) {
+                        if (buildings[building][i].indbyggere < buildings[building][i].housing) {
+                            this.reproduce(buildings[building][i]);
+                        }
+                    }
                 }
             }
         }
@@ -56,8 +58,8 @@ class Human {
         money += this.job.cashProd
     }
 
-    reproduce() {
-        population.push(new Human(0));
+    reproduce(home) {
+        population.push(new Human(0,home));
     }
 
     die(i) {
@@ -65,7 +67,7 @@ class Human {
         if (this.job != "unemployed") {
             this.job.activeJobs--;
         }
-        
+        this.home.indbyggere--;
         population.splice(i,1);
         if (i < population.length) {
             population[i].update(i);
