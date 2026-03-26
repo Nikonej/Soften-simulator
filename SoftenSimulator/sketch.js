@@ -115,7 +115,7 @@ function Room(x , y, selected){
         }
     }  
     } else {
-        for (let i = 0; i < sizex + 1; i++){
+        for (let i = 0; i < sizex; i++){
             for (let j = 0; j < sizey; j++){
                 if (grid[x+i][y+j] == true){
                     result = false;
