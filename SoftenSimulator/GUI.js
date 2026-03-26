@@ -2,6 +2,8 @@ xselscroll = 0;
 showpriorities = false;
 swap1 = 0;
 swap2 = 0;
+
+
 function GUI(){
     z = z0/zoom
     rect((0 - xscroll)*z, (500 - yscroll)*z, 800*z, 200*z);
@@ -44,6 +46,12 @@ function GUI(){
                 rect((250 - xscroll + xselscroll)*z, (550 - yscroll)*z,60*z,40*z);
             pop;
         break;
+        case Vej:
+            push;
+                fill(170, 240, 30, 100);
+                rect((330 - xscroll + xselscroll)*z, (550 - yscroll)*z,60*z,40*z);
+            pop;
+        break;
     }
     if (mouseY>500){
         if (mouseX - xselscroll >= 10 && mouseX - xselscroll <= 70 && mouseY >= 540){
@@ -81,6 +89,9 @@ function mouseClicked() {
         } else if (mouseX - xselscroll >= 250 && mouseX - xselscroll <= 310 && mouseY >= 540){
             selected = Hospital;
             selectedarray = buildings.hospitaler;
+        } else if (mouseX - xselscroll >= 330 && mouseX - xselscroll <= 390 && mouseY >= 540){
+            selected = Vej;
+            selectedarray = buildings.veje;
         }
     } else {
         if (grid[x][y] == false){
@@ -101,4 +112,20 @@ function mouseWheel(event) {
         xselscroll -= event.deltaX;
     }
 
+}
+
+class Vej extends Building{
+    static price = 100;
+    static buildtime = 1;
+    constructor(x, y, selected, sizex, sizey){
+        super(x, y, selected);
+        this.sizex = sizex;
+        this.sizey = sizey;
+    }
+    draw(){
+        push();
+            fill(170);
+            rect(this.x*z0, this.y*z0, this.sizex, this.sizey);
+        pop();
+    }
 }

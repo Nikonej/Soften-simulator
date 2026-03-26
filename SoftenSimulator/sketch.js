@@ -29,7 +29,8 @@ async function setup() {
         kontorer: [],
         constructionsite: [],
         hoteller: [],
-        hospitaler: []
+        hospitaler: [],
+        veje: []
     }
     selected = Hus;
     selectedarray = buildings.huse;
