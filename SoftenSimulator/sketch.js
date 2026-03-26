@@ -16,7 +16,7 @@ async function setup() {
     workers = 0;
     money = 50000;
     housing = 10;
-    gamespeed = 1;
+    gamespeed = 5;
 
     grid = [];
     for (let i = 0; i<100; i++) {
