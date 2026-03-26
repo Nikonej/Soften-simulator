@@ -16,6 +16,7 @@ async function setup() {
     workers = 0;
     money = 50000;
     housing = 10;
+    gamespeed = 1;
 
     grid = [];
     for (let i = 0; i<100; i++) {
@@ -47,6 +48,7 @@ async function setup() {
 
 function draw() {
     frameRate(30);
+    time += gamespeed;
     translate(xscroll, yscroll);
     scale(zoom/z0);
     background(10,100,10);
@@ -64,17 +66,16 @@ function draw() {
         }
     }
 
-    if (frameCount % 30 == 0) {
+    if (time > 300) {
+        time = 0;
         update();
     }
     GUI();
 }
 
 function update() {
-    time++;
     workers = 0;
     jobs = 0;
-   // print(time);
     housing = 0;
 
     for(building in buildings) {
