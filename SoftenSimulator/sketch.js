@@ -39,7 +39,7 @@ async function setup() {
     
     population = [];
     for (let i=0; i<4; i++) {
-        population.push(new Human(random(15,45)));
+        population.push(new Human(random(15,45), buildings.huse[0]));
     }
     prioriteretArbejde = [buildings.kontorer, buildings.hospitaler];
 
