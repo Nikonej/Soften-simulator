@@ -1,7 +1,7 @@
 xselscroll = 0;
 showpriorities = false;
-swap1 = 0;
-swap2 = 0;
+Vej1 = 0;
+Vej2 = 0;
 
 
 function GUI(){
@@ -95,10 +95,50 @@ function mouseClicked() {
         }
     } else {
         if (grid[x][y] == false){
-            if (Room(x,y,selected) && selected.price <= money){
-              //  selectedarray.push(new selected(x, y, selected));
-                buildings.constructionsite.push(new Constructionsite(x, y, selected, selectedarray));
-                money -= selected.price;
+            if (selected != Vej){
+                if (Room(x,y,selected) && selected.price <= money){
+                    buildings.constructionsite.push(new Constructionsite(x, y, selected, selectedarray));
+                    money -= selected.price;
+                }
+            } else {
+                if (Vej1 == 0){
+                    Vej1 = {x: x,y: y};
+                } else {
+                    let roadSizeX = 1;
+                    let roadSizeY = 1;
+                    if (Vej1.x - x > 0){
+                        roadSizeX = 1 + Vej1.x - x;
+                    } else {
+                        roadSizeX = 1+ x - Vej1.x;
+                    }
+                    if (Vej1.y - y > 0){
+                        roadSizeY = 1 + Vej1.y - y;
+                    } else {
+                        roadSizeY = 1 + y - Vej1.y;
+                    }
+                    //print(roadSizeY);
+                    if (roadSizeX>=roadSizeY && money >= selected.price * roadSizeX){
+                        for (let i = 0; i < roadSizeX; i++){
+                            if (Vej1.x < x){
+                                buildings.constructionsite.push(new Constructionsite(Vej1.x + i, Vej1.y, selected, selectedarray));
+                                money -= selected.price;
+                            } else {
+                                buildings.constructionsite.push(new Constructionsite(x + i, y, selected, selectedarray));
+                                money -= selected.price;
+                            }
+                        }
+                    } else if (money >= selected.price * roadSizeY){
+                        for (let i = 0; i < roadSizeY; i++){
+                            if (Vej1.y < y){
+                                buildings.constructionsite.push(new Constructionsite(Vej1.x, Vej1.y + i, selected, selectedarray));
+                                money -= selected.price;
+                            } else {
+                                buildings.constructionsite.push(new Constructionsite(x, y + i, selected, selectedarray));
+                                money -= selected.price;
+                            }                        }
+                    }
+                    Vej1 = 0;
+                }
             }
         }
     }
@@ -117,15 +157,18 @@ function mouseWheel(event) {
 class Vej extends Building{
     static price = 100;
     static buildtime = 1;
-    constructor(x, y, selected, sizex, sizey){
+    static sizex = 1;
+    static sizey = 1;
+    constructor(x, y, selected, selectedarray){
         super(x, y, selected);
-        this.sizex = sizex;
-        this.sizey = sizey;
+        //this.sizex = sizex;
+        //this.sizey = sizey;
     }
     draw(){
         push();
             fill(170);
-            rect(this.x*z0, this.y*z0, this.sizex, this.sizey);
+            //rect(this.x*60, 120, 120, 60)
+            rect(this.x*z0, this.y*z0, z0, z0);
         pop();
     }
 }

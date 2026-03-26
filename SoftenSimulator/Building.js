@@ -48,7 +48,7 @@ class Constructionsite extends Building {
 }
 
 class Hus extends Building {
-    static sizex = 3;
+    static sizex = 4;
     static sizey = 2;
     static price = 1000;
     static buildtime = 1;

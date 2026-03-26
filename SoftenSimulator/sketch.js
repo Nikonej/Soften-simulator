@@ -34,7 +34,7 @@ async function setup() {
     }
     selected = Hus;
     selectedarray = buildings.huse;
-    print(buildings.kontorer)
+    //print(buildings.kontorer)
 
     
     population = [];
@@ -86,8 +86,8 @@ function update() {
     for (let i = 0; i<population.length; i++) {
         population[i].update(i);
     }
-    print("workers: " + workers);
-    print("jobs: " + jobs);
+    //print("workers: " + workers);
+    //print("jobs: " + jobs);
 }
 
 function keyPressed() {
@@ -114,7 +114,7 @@ function Room(x , y, selected){
         }
     }  
     } else {
-        for (let i = -1; i < sizex + 1; i++){
+        for (let i = 0; i < sizex + 1; i++){
             for (let j = 0; j < sizey; j++){
                 if (grid[x+i][y+j] == true){
                     result = false;
