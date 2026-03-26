@@ -123,7 +123,7 @@ function mouseClicked() {
                                 buildings.constructionsite.push(new Constructionsite(Vej1.x + i, Vej1.y, selected, selectedarray));
                                 money -= selected.price;
                             } else {
-                                buildings.constructionsite.push(new Constructionsite(x + i, y, selected, selectedarray));
+                                buildings.constructionsite.push(new Constructionsite(x + i, Vej1.y, selected, selectedarray));
                                 money -= selected.price;
                             }
                         }
@@ -133,7 +133,7 @@ function mouseClicked() {
                                 buildings.constructionsite.push(new Constructionsite(Vej1.x, Vej1.y + i, selected, selectedarray));
                                 money -= selected.price;
                             } else {
-                                buildings.constructionsite.push(new Constructionsite(x, y + i, selected, selectedarray));
+                                buildings.constructionsite.push(new Constructionsite(Vej1.x, y + i, selected, selectedarray));
                                 money -= selected.price;
                             }                        }
                     }
