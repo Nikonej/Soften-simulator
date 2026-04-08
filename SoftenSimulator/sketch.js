@@ -80,12 +80,20 @@ function update() {
 
     for(building in buildings) {
         for (let i=0; i<buildings[building].length; i++) {
+            let g = buildings[building].length;
             buildings[building][i].update(i);
+            if (g > buildings[building].length) {
+                i--;
+            }
         }
     }
 
     for (let i = 0; i<population.length; i++) {
+        let g = population.length;
         population[i].update(i);
+        if (g > population.length) {
+            i--;
+        }
     }
     //print("workers: " + workers);
     //print("jobs: " + jobs);
