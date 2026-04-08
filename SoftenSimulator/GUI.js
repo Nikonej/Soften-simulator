@@ -5,6 +5,8 @@ Vej2 = 0;
 
 
 function GUI(){
+    let x = floor((mouseX-xscroll)/zoom);
+    let y = floor((mouseY-yscroll)/zoom);
     z = z0/zoom
     rect((0 - xscroll)*z, (500 - yscroll)*z, 800*z, 200*z);
     push();
@@ -26,33 +28,58 @@ function GUI(){
             push;
                 fill(170, 240, 30, 100);
                 rect((10 - xscroll + xselscroll)*z, (550 - yscroll)*z,60*z,40*z);
+                if (mouseY < 500){
+                    tint(255,177);
+                    image(husimg, x*z0, y*z0, selected.sizex*z0, selected.sizey*z0);
+                    tint(255,255);
+                }
             pop;
         break;
         case Kontor:
             push;
                 fill(170, 240, 30, 100);
                 rect((90 - xscroll + xselscroll)*z, (550 - yscroll)*z,60*z,40*z);
+                if (mouseY < 500){
+                    tint(255,177);
+                    image(kontor1img, x*z0, y*z0, selected.sizex*z0, selected.sizey*z0);
+                    tint(255,255);
+                }
             pop;
         break;
         case Hotel:
             push;
                 fill(170, 240, 30, 100);
                 rect((170 - xscroll + xselscroll)*z, (550 - yscroll)*z,60*z,40*z);
+                if (mouseY < 500){
+                    tint(255,177);
+                    image(hotel1img, x*z0, y*z0, selected.sizex*z0, selected.sizey*z0);
+                    tint(255,255);
+                }
             pop;
         break;
         case Hospital:
             push;
                 fill(170, 240, 30, 100);
                 rect((250 - xscroll + xselscroll)*z, (550 - yscroll)*z,60*z,40*z);
+                if (mouseY < 500){
+                    tint(255,177);
+                    image(hospitalimg, x*z0, y*z0, selected.sizex*z0, selected.sizey*z0);
+                    tint(255,255);
+                }
             pop;
         break;
         case Vej:
             push;
                 fill(170, 240, 30, 100);
                 rect((330 - xscroll + xselscroll)*z, (550 - yscroll)*z,60*z,40*z);
+                if (mouseY < 500){
+                    fill(170);
+                    rect(x*z0, y*z0, z0, z0);
+                }
             pop;
         break;
     }
+    
     if (mouseY>500){
         if (mouseX - xselscroll >= 10 && mouseX - xselscroll <= 70 && mouseY >= 540){
             showStats(Hus);
