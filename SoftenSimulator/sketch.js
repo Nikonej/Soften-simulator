@@ -18,7 +18,13 @@ async function setup() {
     money = 50000;
     housing = 10;
     gamespeed = 5;
-
+    vejnet = [];
+    for (let i = 0; i<100; i++) {
+        vejnet.push([]);
+        for (let j = 0; j<100; j++) {
+            vejnet[i].push(false);
+        }
+    }
     grid = [];
     for (let i = 0; i<100; i++) {
         grid.push([]);
@@ -106,6 +112,17 @@ function keyPressed() {
     }
     if (key == "-" && zoom > 1) {
         zoom -= 1;
+    }
+    if (key == "j") {
+        let pj = []
+        for (let i = 0; i<100; i++) {
+            pj.push([]);
+            for (let j = 0; j<100; j++) {
+                pj[i].push(false);
+            }
+        }
+        BFS(2,2, pj)
+        print(pj[10][4]);
     }
 }
 

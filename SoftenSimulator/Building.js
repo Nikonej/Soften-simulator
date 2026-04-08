@@ -157,13 +157,11 @@ class Vej extends Building{
     static sizey = 1;
     constructor(x, y, selected, selectedarray){
         super(x, y, selected);
-        //this.sizex = sizex;
-        //this.sizey = sizey;
+        vejnet[x][y] = true;
     }
     draw(){
         push();
             fill(170);
-            //rect(this.x*60, 120, 120, 60)
             rect(this.x*z0, this.y*z0, z0, z0);
         pop();
     }
