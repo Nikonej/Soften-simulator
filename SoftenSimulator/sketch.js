@@ -14,6 +14,7 @@ async function setup() {
     yscroll = 0;
     time = 0;
     workers = 0;
+    jobs = 0;
     money = 50000;
     housing = 10;
     gamespeed = 5;
@@ -71,6 +72,7 @@ function draw() {
         update();
     }
     GUI();
+    
 }
 
 function update() {
@@ -95,8 +97,7 @@ function update() {
             i--;
         }
     }
-    //print("workers: " + workers);
-    //print("jobs: " + jobs);
+    
 }
 
 function keyPressed() {

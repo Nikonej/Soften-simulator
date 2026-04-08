@@ -13,7 +13,9 @@ function GUI(){
         fill(255);
         textSize(14*z);
         text("Population: " + population.length, (10 - xscroll)*z, (512 - yscroll)*z);
-        text("money: " + money, (200 - xscroll)*z, (512 - yscroll)*z);
+        text("money: " + money, (150 - xscroll)*z, (512 - yscroll)*z);
+        text("workers: " + workers, (300 - xscroll)*z, (512 - yscroll)*z);
+        text("jobs: " + jobs, (450 - xscroll)*z, (512 - yscroll)*z);
     pop();
     image(husimg, (10 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60*z, 40*z);
     image(kontor1img, (90 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60 * z, 40 * z);
@@ -112,7 +114,7 @@ function GUI(){
 
 function showStats(KK) {
     fill(100);
-    rect(mouseX*z - xscroll, (mouseY-120)*z - yscroll, 120*z, 120*z);
+    rect(mouseX*z - xscroll*z, (mouseY-120)*z - yscroll*z, 120*z, 120*z);
     KK.display(mouseX, mouseY-120);
 
 }
