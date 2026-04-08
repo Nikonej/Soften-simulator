@@ -77,7 +77,6 @@ function GUI(){
                     if (vej1 == 0){
                         rect(x*z0, y*z0, z0, z0);
                     } else {
-                        print(x);
                         if (((vej1.x - x)**2)**0.5 > ((vej1.y - y)**2)**0.5){
                             if (vej1.x > x){
                                 rect(x * z0, vej1.y  * z0, z0 * (vej1.x - x + 1), z0)
