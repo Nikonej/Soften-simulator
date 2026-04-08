@@ -123,7 +123,7 @@ function mouseClicked() {
                                 buildings.constructionsite.push(new Constructionsite(Vej1.x + i, Vej1.y, selected, selectedarray));
                                 money -= selected.price;
                             } else {
-                                buildings.constructionsite.push(new Constructionsite(x + i, y, selected, selectedarray));
+                                buildings.constructionsite.push(new Constructionsite(x + i, Vej1.y, selected, selectedarray));
                                 money -= selected.price;
                             }
                         }
@@ -133,7 +133,7 @@ function mouseClicked() {
                                 buildings.constructionsite.push(new Constructionsite(Vej1.x, Vej1.y + i, selected, selectedarray));
                                 money -= selected.price;
                             } else {
-                                buildings.constructionsite.push(new Constructionsite(x, y + i, selected, selectedarray));
+                                buildings.constructionsite.push(new Constructionsite(Vej1.x, y + i, selected, selectedarray));
                                 money -= selected.price;
                             }                        }
                     }
@@ -152,23 +152,4 @@ function mouseWheel(event) {
         xselscroll -= event.deltaX;
     }
 
-}
-
-class Vej extends Building{
-    static price = 100;
-    static buildtime = 1;
-    static sizex = 1;
-    static sizey = 1;
-    constructor(x, y, selected, selectedarray){
-        super(x, y, selected);
-        //this.sizex = sizex;
-        //this.sizey = sizey;
-    }
-    draw(){
-        push();
-            fill(170);
-            //rect(this.x*60, 120, 120, 60)
-            rect(this.x*z0, this.y*z0, z0, z0);
-        pop();
-    }
 }
