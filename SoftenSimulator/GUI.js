@@ -1,6 +1,6 @@
 xselscroll = 0;
 showpriorities = false;
-Vej1 = 0;
+vej1 = 0;
 Vej2 = 0;
 
 
@@ -73,8 +73,25 @@ function GUI(){
                 fill(170, 240, 30, 100);
                 rect((330 - xscroll + xselscroll)*z, (550 - yscroll)*z,60*z,40*z);
                 if (mouseY < 500){
-                    fill(170);
-                    rect(x*z0, y*z0, z0, z0);
+                    fill(122, 121, 121, 177);
+                    if (vej1 == 0){
+                        rect(x*z0, y*z0, z0, z0);
+                    } else {
+                        print(x);
+                        if (((vej1.x - x)**2)**0.5 > ((vej1.y - y)**2)**0.5){
+                            if (vej1.x > x){
+                                rect(x * z0, vej1.y  * z0, z0 * (vej1.x - x + 1), z0)
+                            } else {
+                                rect(vej1.x * z0, vej1.y  * z0, z0 * (x - vej1.x + 1), z0)
+                            }
+                        } else {
+                            if (vej1.y > y){
+                                rect(vej1.x * z0, y * z0, z0 , (vej1.y - y + 1) * z0)
+                            } else {
+                                rect(vej1.x * z0, vej1.y * z0, z0 , (y - vej1.y + 1) * z0)
+                            }
+                        }
+                    }
                 }
             pop;
         break;
@@ -128,43 +145,43 @@ function mouseClicked() {
                     money -= selected.price;
                 }
             } else {
-                if (Vej1 == 0){
-                    Vej1 = {x: x,y: y};
+                if (vej1 == 0){
+                    vej1 = {x: x,y: y};
                 } else {
                     let roadSizeX = 1;
                     let roadSizeY = 1;
-                    if (Vej1.x - x > 0){
-                        roadSizeX = 1 + Vej1.x - x;
+                    if (vej1.x - x > 0){
+                        roadSizeX = 1 + vej1.x - x;
                     } else {
-                        roadSizeX = 1+ x - Vej1.x;
+                        roadSizeX = 1 + x - vej1.x;
                     }
-                    if (Vej1.y - y > 0){
-                        roadSizeY = 1 + Vej1.y - y;
+                    if (vej1.y - y > 0){
+                        roadSizeY = 1 + vej1.y - y;
                     } else {
-                        roadSizeY = 1 + y - Vej1.y;
+                        roadSizeY = 1 + y - vej1.y;
                     }
                     //print(roadSizeY);
-                    if (roadSizeX>=roadSizeY && money >= selected.price * roadSizeX){
+                    if (roadSizeX >= roadSizeY && money >= selected.price * roadSizeX){
                         for (let i = 0; i < roadSizeX; i++){
-                            if (Vej1.x < x){
-                                buildings.constructionsite.push(new Constructionsite(Vej1.x + i, Vej1.y, selected, selectedarray));
+                            if (vej1.x < x){
+                                buildings.constructionsite.push(new Constructionsite(vej1.x + i, vej1.y, selected, selectedarray));
                                 money -= selected.price;
                             } else {
-                                buildings.constructionsite.push(new Constructionsite(x + i, Vej1.y, selected, selectedarray));
+                                buildings.constructionsite.push(new Constructionsite(x + i, vej1.y, selected, selectedarray));
                                 money -= selected.price;
                             }
                         }
                     } else if (money >= selected.price * roadSizeY){
                         for (let i = 0; i < roadSizeY; i++){
-                            if (Vej1.y < y){
-                                buildings.constructionsite.push(new Constructionsite(Vej1.x, Vej1.y + i, selected, selectedarray));
+                            if (vej1.y < y){
+                                buildings.constructionsite.push(new Constructionsite(vej1.x, vej1.y + i, selected, selectedarray));
                                 money -= selected.price;
                             } else {
-                                buildings.constructionsite.push(new Constructionsite(Vej1.x, y + i, selected, selectedarray));
+                                buildings.constructionsite.push(new Constructionsite(vej1.x, y + i, selected, selectedarray));
                                 money -= selected.price;
                             }                        }
                     }
-                    Vej1 = 0;
+                    vej1 = 0;
                 }
             }
         }
