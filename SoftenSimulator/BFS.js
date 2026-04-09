@@ -1,4 +1,4 @@
-function BFS(x, y, graph) {
+function BFS(x, y) {
     let visited = [];
     for (let i = 0; i<100; i++) {
         visited.push([]);
@@ -6,10 +6,17 @@ function BFS(x, y, graph) {
             visited[i].push(false);
         }
     }
-    paths = [{
-        x: x,
-        y: y
-    }];
+    let graph = [];
+    for (let i = 0; i<100; i++) {
+        graph.push([]);
+        for (let j = 0; j<100; j++) {
+            graph[i].push(false);
+        }
+    }
+    paths = [];
+    if (vejnet[x][y]) {
+        paths.push({x: x, y: y})
+    }
     visited[x][y] = true;
     graph[x][y] = 0;
     skridt = 0;
@@ -44,4 +51,5 @@ function BFS(x, y, graph) {
             }
         }
     }
+    return(graph);
 }

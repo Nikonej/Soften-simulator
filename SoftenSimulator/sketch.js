@@ -26,16 +26,16 @@ async function setup() {
         }
     }
     grid = [];
-    for (let i = 0; i<100; i++) {
+    for (let i = 0; i<99; i++) {
         grid.push([]);
-        for (let j = 0; j<100; j++) {
+        for (let j = 0; j<99; j++) {
             grid[i].push(false);
         }
     }
     buildings = {
+        constructionsite: [],
         huse: [new Hus(5, 4, Hus), new Hus(1, 4, Hus)],
         kontorer: [],
-        constructionsite: [],
         hoteller: [],
         hospitaler: [],
         veje: []
@@ -72,6 +72,9 @@ function draw() {
             buildings[building][i].draw();
         }
     }
+    for (let i=0; i<population.length; i++) {
+        population[i].draw();
+    }
 
     if (time > 300) {
         time = 0;
@@ -85,6 +88,7 @@ function update() {
     workers = 0;
     jobs = 0;
     housing = 0;
+    pk = 0;
 
     for(building in buildings) {
         for (let i=0; i<buildings[building].length; i++) {
@@ -97,12 +101,9 @@ function update() {
     }
 
     for (let i = 0; i<population.length; i++) {
-        let g = population.length;
         population[i].update(i);
-        if (g > population.length) {
-            i--;
-        }
     }
+    print(pk);
     
 }
 

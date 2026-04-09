@@ -8,6 +8,7 @@ class Building {
         this.indbyggere = 0;
         this.maxJobs = 0;
         this.income = 0;
+        this.activeJobs = 0;
         for (let i = 0; i < this.sizex; i++){
             for (let j = 0; j < this.sizey; j++){
                 grid[this.x+i][this.y+j] = true;
@@ -56,6 +57,8 @@ class Hus extends Building {
     constructor(x, y, selected) {
         super(x, y, selected);
         this.housing = Hus.housing;
+        this.doorX = this.x+1;
+        this.doorY = this.y+2;
     }
 
     draw() {
@@ -80,6 +83,8 @@ class Hotel extends Building {
     constructor(x, y, selected) {
         super(x, y, selected);
         this.housing = Hotel.housing;
+        this.doorX = this.x+1;
+        this.doorY = this.y+6;
     }
 
     draw() {
@@ -104,13 +109,20 @@ class Kontor extends Building {
     static buildtime = 3;
     constructor(x, y, selected) {
         super(x, y, selected);
-        this.activeJobs = 0;
         this.maxJobs = Kontor.maxJobs;
         this.cashProd = Kontor.income/Kontor.maxJobs;
+        this.doorX = this.x+1;
+        this.doorY = this.y+3;
     }
 
     draw() {
         image(kontor1img,this.x*z0, this.y*z0);
+    }
+
+    update() {
+        jobs += this.maxJobs;
+        this.graph = BFS(this.doorX, this.doorY);
+        
     }
 
     static display(x,y) {
@@ -133,8 +145,9 @@ class Hospital extends Building {
     constructor(x, y, selected) {
         super(x, y, selected);
         this.maxJobs = Hospital.maxJobs;
-        this.activeJobs = 0;
         this.cashProd = Hospital.income/Hospital.maxJobs;
+        this.doorX = this.x;
+        this.doorY = this.y+3;
     }
 
     draw() {

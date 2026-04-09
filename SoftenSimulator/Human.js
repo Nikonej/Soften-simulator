@@ -2,11 +2,31 @@ class Human {
     constructor(age, home) {
         this.age = age;
         this.productivity = 1;
+        this.x = home.doorX;
+        this.y = home.doorY;
         this.home = home;
         home.indbyggere++;
         this.job = "unemployed"
+        this.alive = true;
         this.firstName = firstNames[floor(random(0,firstNames.length))];
         this.lastName = lastNames[floor(random(0,lastNames.length))];
+    }
+
+    draw() {
+
+        circle(this.x*z0 + z0/2, this.y*z0 + z0/2, 30);
+        //gå på arbejde
+        if (this.job != "unemployed") {
+            if (this.x != 100 && this.job.graph[this.x+1][this.y] < this.job.graph[this.x][this.y] && this.job.graph[this.x+1][this.y] !== false) {
+                this.x++;
+            } else if (this.x != 0 && this.job.graph[this.x -1][this.y] < this.job.graph[this.x][this.y] && this.job.graph[this.x-1][this.y] !== false) {
+                this.x--;
+            } else if (this.y != 100 && this.job.graph[this.x][this.y+1] < this.job.graph[this.x][this.y] && this.job.graph[this.x][this.y+1] !== false) {
+                this.y++;
+            } else if (this.y != 0 && this.job.graph[this.x][this.y-1] < this.job.graph[this.x][this.y] && this.job.graph[this.x][this.y-1] !== false) {
+                this.y --;
+            }
+        }
     }
 
     update(i) {
@@ -30,6 +50,9 @@ class Human {
                 this.die(i);
             }
         }
+        if (this.alive == false) {
+            return;
+        }
         // tæl arbejdere
         if (this.age > 13) {
             workers++;
@@ -37,7 +60,29 @@ class Human {
 
         //find job
         if (this.age > 13 && this.job == "unemployed") {
-            for (let i=0; i<prioriteretArbejde.length; i++) {
+            let dist = 100000000;
+            let job = "unemployed";
+            for (building in buildings) {
+                for (let i=0; i<buildings[building].length; i++) {
+                    if (buildings[building][i].activeJobs < buildings[building][i].maxJobs) {
+                        if (buildings[building][i].graph[this.home.doorX][this.home.doorY] < dist && !(buildings[building][i].graph[this.home.doorX][this.home.doorY] === false)) {
+                            dist = buildings[building][i].graph[this.home.doorX][this.home.doorY];
+                            job = buildings[building][i];
+                        } 
+                    }
+                }
+            }
+            this.job = job;
+            if (job != "unemployed") {
+                this.job.activeJobs++;
+            }
+            
+
+
+
+
+
+         /*   for (let i=0; i<prioriteretArbejde.length; i++) {
                 for (let j = 0; j<prioriteretArbejde[i].length; j++) {
                     if (prioriteretArbejde[i][j].maxJobs > prioriteretArbejde[i][j].activeJobs) {
                         prioriteretArbejde[i][j].activeJobs++;
@@ -46,7 +91,7 @@ class Human {
                         break;
                     }
                 }
-            }
+            } */
         }
         //work
         if (this.job != "unemployed") {
@@ -56,6 +101,7 @@ class Human {
 
     work() {
         money += this.job.cashProd
+        pk++;
     }
 
     reproduce(home) {
@@ -67,8 +113,10 @@ class Human {
         if (this.job != "unemployed") {
             this.job.activeJobs--;
         }
+
         this.home.indbyggere--;
         population.splice(i,1);
+        this.alive = false;        
         if (i < population.length) {
             population[i].update(i);
         }
