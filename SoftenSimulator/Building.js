@@ -104,7 +104,7 @@ class Kontor extends Building {
     static sizey = 3;
     static price = 4000;
     static maxJobs = 6
-    static income = 300;    
+    static income = 12;    
     static buildtime = 3;
     constructor(x, y, selected) {
         super(x, y, selected);

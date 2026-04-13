@@ -15,7 +15,7 @@ class Human {
     }
 
     draw() {
-        this.time += gamespeed/5;
+        this.time += gamespeed/3;
         circle(this.x*z0 + z0/2, this.y*z0 + z0/2, 30);
         //gå på arbejde
         while (this.time > 0) {

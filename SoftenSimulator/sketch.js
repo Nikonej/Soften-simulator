@@ -17,7 +17,7 @@ async function setup() {
     jobs = 0;
     money = 50000;
     housing = 10;
-    gamespeed = 5;
+    gamespeed = 2;
     vejnet = [];
     haveHalfUpdated = true;
     for (let i = 0; i<100; i++) {
