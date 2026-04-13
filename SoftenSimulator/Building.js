@@ -23,7 +23,6 @@ class Building {
     update(i) {
         housing += this.housing;
         jobs += this.maxJobs;
-
     }
 }
 
@@ -122,7 +121,6 @@ class Kontor extends Building {
     update() {
         jobs += this.maxJobs;
         this.graph = BFS(this.doorX, this.doorY);
-        
     }
 
     static display(x,y) {
@@ -148,6 +146,11 @@ class Hospital extends Building {
         this.cashProd = Hospital.income/Hospital.maxJobs;
         this.doorX = this.x;
         this.doorY = this.y+3;
+    }
+
+    update() {
+        jobs += this.maxJobs;
+        this.graph = BFS(this.doorX, this.doorY);
     }
 
     draw() {

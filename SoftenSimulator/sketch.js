@@ -19,6 +19,7 @@ async function setup() {
     housing = 10;
     gamespeed = 5;
     vejnet = [];
+    haveHalfUpdated = true;
     for (let i = 0; i<100; i++) {
         vejnet.push([]);
         for (let j = 0; j<100; j++) {
@@ -75,10 +76,14 @@ function draw() {
     for (let i=0; i<population.length; i++) {
         population[i].draw();
     }
-
+    if (time > 150 && haveHalfUpdated) {
+        halfUpdate();
+        haveHalfUpdated = false;
+    }
     if (time > 300) {
         time = 0;
         update();
+        haveHalfUpdated = true;
     }
     GUI();
     
@@ -105,6 +110,12 @@ function update() {
     }
     print(pk);
     
+}
+
+function halfUpdate() {
+    for (let i = 0; i<population.length; i++) {
+        population[i].halfUpdate();
+    }
 }
 
 function keyPressed() {
