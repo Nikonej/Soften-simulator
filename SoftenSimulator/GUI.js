@@ -162,7 +162,37 @@ function mouseClicked() {
                         roadSizeY = 1 + y - vej1.y;
                     }
                     //print(roadSizeY);
-                    if (roadSizeX >= roadSizeY && money >= selected.price * roadSizeX){
+                    let placeable = true;
+                    if (roadSizeX > roadSizeY){
+                        for (let i = 0; i < roadSizeX; i++){
+                            if (vej1.x < x){
+                                if (grid[vej1.x + i][vej1.y]){
+                                    placeable = false;
+                                    break;
+                                }
+                            } else{
+                                if (grid[vej1.x - i][vej1.y]){
+                                    placeable = false;
+                                    break;
+                                }
+                            }
+                        }
+                    } else {
+                        for (let i = 0; i < roadSizeY; i++){
+                            if (vej1.y < y){
+                                if (grid[vej1.x][vej1.y + i]){
+                                    placeable = false;
+                                    break;
+                                }
+                            } else{
+                                if (grid[vej1.x][vej1.y - i]){
+                                    placeable = false;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    if (roadSizeX >= roadSizeY && money >= selected.price * roadSizeX && placeable){
                         for (let i = 0; i < roadSizeX; i++){
                             if (vej1.x < x){
                                 buildings.constructionsite.push(new Constructionsite(vej1.x + i, vej1.y, selected, selectedarray));
@@ -172,7 +202,7 @@ function mouseClicked() {
                                 money -= selected.price;
                             }
                         }
-                    } else if (money >= selected.price * roadSizeY){
+                    } else if (roadSizeY > roadSizeX && money >= selected.price * roadSizeY && placeable){
                         for (let i = 0; i < roadSizeY; i++){
                             if (vej1.y < y){
                                 buildings.constructionsite.push(new Constructionsite(vej1.x, vej1.y + i, selected, selectedarray));
