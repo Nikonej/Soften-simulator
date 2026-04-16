@@ -17,7 +17,8 @@ async function setup() {
     jobs = 0;
     money = 50000;
     housing = 10;
-    gamespeed = 2;
+    gamespeed = 5;
+    happiness = 1;
     vejnet = [];
     haveHalfUpdated = true;
     for (let i = 0; i<100; i++) {
@@ -40,6 +41,12 @@ async function setup() {
         hoteller: [],
         hospitaler: [],
         veje: []
+    }
+    needs = {
+        health: 0
+    }
+    satisfaction = {
+        health: 0
     }
     selected = Hus;
     selectedarray = buildings.huse;
@@ -89,11 +96,29 @@ function draw() {
     
 }
 
+function updateHappiness() {    
+    if (population.length > 10) {
+        needs.health = population.length-10;
+    } else {
+        needs.health = 0;
+    }
+
+    totalNeeds = needs.health;
+
+    if (totalNeeds == 0) {
+        happiness = 1;
+    } else {
+        happiness *= 0.7
+        happiness += min(satisfaction.health, needs.health)/totalNeeds*0.3;
+    }
+    print(happiness);
+}
+
 function update() {
+    updateHappiness();
     workers = 0;
     jobs = 0;
     housing = 0;
-    pk = 0;
 
     for(building in buildings) {
         for (let i=0; i<buildings[building].length; i++) {
@@ -108,7 +133,6 @@ function update() {
     for (let i = 0; i<population.length; i++) {
         population[i].update(i);
     }
-    print(pk);
     
 }
 

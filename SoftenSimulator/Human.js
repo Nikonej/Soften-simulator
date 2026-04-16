@@ -128,14 +128,14 @@ class Human {
         }
         //work
         if (this.job != "unemployed") {
-            this.work();
             this.state = "goToWork";
         }
         
     }
 
     work() {
-        money += this.job.cashProd;
+        money += this.job.cashProd * happiness;
+        this.job.produce(happiness);
     }
 
     halfUpdate() {
