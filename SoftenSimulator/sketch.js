@@ -112,6 +112,7 @@ function updateHappiness() {
         happiness += min(satisfaction.health, needs.health)/totalNeeds*0.3;
     }
     print(happiness);
+    satisfaction.health = 0;
 }
 
 function update() {

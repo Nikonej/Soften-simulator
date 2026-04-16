@@ -135,7 +135,7 @@ class Human {
 
     work() {
         money += this.job.cashProd * happiness;
-        this.job.produce(happiness);
+        this.job.produce(happiness/25);
     }
 
     halfUpdate() {
