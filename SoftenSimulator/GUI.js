@@ -21,6 +21,14 @@ function GUI(){
     image(kontor1img, (90 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60 * z, 40 * z);
     image(hotel1img, (170 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60 * z, 40 * z);
     image(hospitalimg, (250 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60 * z, 40 * z);
+    image(parkimg, (330 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60 * z, 40 * z);
+    image(skoleimg, (410 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60 * z, 40 * z);
+    image(politiimg, (490 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60 * z, 40 * z);
+    image(kontor2img, (570 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60 * z, 40 * z);
+    image(fabrikimg, (650 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60 * z, 40 * z);
+    image(ikeaimg, (730 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60 * z, 40 * z);
+    image(bankimg, (810 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60 * z, 40 * z);
+    image(wtcimg, (890 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60 * z, 40 * z);
     push();
         fill(170);
         rect((330 - xscroll + xselscroll)*z,(550 - yscroll)*z, 60 * z, 40 * z);
