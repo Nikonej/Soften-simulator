@@ -17,7 +17,11 @@ class Building {
     }
 
     draw() {
+        
+    }
 
+    produce() {
+        
     }
 
     update(i) {
@@ -138,8 +142,8 @@ class Hospital extends Building {
     static sizey = 3;
     static price = 10000;
     static buildtime = 7;
-    static maxJobs = 6;
-    static income = -2400;
+    static maxJobs = 5;
+    static income = -35;
     constructor(x, y, selected) {
         super(x, y, selected);
         this.maxJobs = Hospital.maxJobs;
@@ -155,6 +159,10 @@ class Hospital extends Building {
 
     draw() {
         image(hospitalimg, this.x*z0, this.y*z0);
+    }
+
+    produce(prod) {
+        satisfaction.health += prod;
     }
 
     static display(x,y) {
