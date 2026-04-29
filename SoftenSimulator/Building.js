@@ -333,8 +333,8 @@ class Hospital extends Building {
         image(hospitalimg, this.x*z0, this.y*z0);
     }
 
-    produce(prod) {
-        satisfaction.health += prod;
+    produce() {
+        satisfaction.health += 0.4*happiness;
     }
 
     static display(x,y) {
@@ -349,10 +349,10 @@ class Hospital extends Building {
 class Park extends Building {
     static sizex = 3;
     static sizey = 3;
-    static price = 10000;
+    static price = 50000;
     static buildtime = 7;
     static maxJobs = 1;
-    static income = -35;
+    static income = -10;
     constructor(x, y, selected) {
         super(x, y, selected);
         this.maxJobs = Park.maxJobs;
@@ -370,8 +370,8 @@ class Park extends Building {
         image(parkimg, this.x*z0, this.y*z0);
     }
 
-    produce(prod) {
-        satisfaction.health += prod;
+    produce() {
+        satisfaction.natur += 4*happiness;
     }
 
     static display(x,y) {
@@ -386,14 +386,14 @@ class Park extends Building {
 class Skole extends Building {
     static sizex = 8;
     static sizey = 3;
-    static price = 10000;
-    static buildtime = 7;
-    static maxJobs = 1;
-    static income = -35;
+    static price = 22000;
+    static buildtime = 10;
+    static maxJobs = 5;
+    static income = -5;
     constructor(x, y, selected) {
         super(x, y, selected);
-        this.maxJobs = Park.maxJobs;
-        this.cashProd = Park.income/Park.maxJobs;
+        this.maxJobs = Skole.maxJobs;
+        this.cashProd = Skole.income/Skole.maxJobs;
         this.doorX = this.x+2;
         this.doorY = this.y+3;
     }
@@ -407,8 +407,8 @@ class Skole extends Building {
         image(skoleimg, this.x*z0, this.y*z0);
     }
 
-    produce(prod) {
-        satisfaction.health += prod;
+    produce() {
+        satisfaction.education += 0,4*happiness;
     }
 
     static display(x,y) {
@@ -423,10 +423,10 @@ class Skole extends Building {
 class Politi extends Building {
     static sizex = 6;
     static sizey = 4;
-    static price = 10000;
-    static buildtime = 7;
-    static maxJobs = 1;
-    static income = -35;
+    static price = 120000;
+    static buildtime = 8;
+    static maxJobs = 12;
+    static income = -12;
     constructor(x, y, selected) {
         super(x, y, selected);
         this.maxJobs = Politi.maxJobs;
@@ -444,16 +444,16 @@ class Politi extends Building {
         image(politiimg, this.x*z0, this.y*z0);
     }
 
-    produce(prod) {
-        satisfaction.health += prod;
+    produce() {
+        satisfaction.safety += 0,67*happiness;
     }
 
     static display(x,y) {
         fill(0);
         textSize(14*z);
-        text("cost: " + Park.price, (x+5)*z - xscroll*z, (y+12)*z - yscroll*z);
-        text("buildtime: " + Park.buildtime, (x+5)*z - xscroll*z, (y+24)*z - yscroll*z);
-        text("workers: " + Park.maxJobs, (x+5)*z - xscroll*z, (y+36)*z - yscroll*z);
+        text("cost: " + Politi.price, (x+5)*z - xscroll*z, (y+12)*z - yscroll*z);
+        text("buildtime: " + Politi.buildtime, (x+5)*z - xscroll*z, (y+24)*z - yscroll*z);
+        text("workers: " + Politi.maxJobs, (x+5)*z - xscroll*z, (y+36)*z - yscroll*z);
     }
 }
 
