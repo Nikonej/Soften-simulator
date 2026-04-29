@@ -59,10 +59,16 @@ async function setup() {
         wtcer: []
     }
     needs = {
-        health: 0
+        health: 0,
+        natur: 0,
+        education: 0,
+        safety: 0
     }
     satisfaction = {
-        health: 0
+        health: 0,
+        natur: 0,
+        education: 0,
+        safety: 0
     }
     selected = Hus;
     selectedarray = buildings.huse;
@@ -119,16 +125,38 @@ function updateHappiness() {
         needs.health = 0;
     }
 
-    totalNeeds = needs.health;
+    if (population.length > 50) {
+        needs.natur = population.length-50;
+    } else {
+        needs.natur = 0;
+    }
+
+    if (population.length > 100) {
+        needs.education = population.length-100
+    } else {
+        needs.education = 0;
+    }
+
+    if (population.length > 350) {
+        needs.safety = population.length-350
+    } else {
+        needs.safety = 0;
+    }
+
+    totalNeeds = needs.health + needs.natur + needs.education + needs.safety;
+    print(totalNeeds);
 
     if (totalNeeds == 0) {
         happiness = 1;
     } else {
         happiness *= 0.7
-        happiness += min(satisfaction.health, needs.health)/totalNeeds*0.3;
+        happiness += (min(satisfaction.health, needs.health) + min(satisfaction.natur, needs.natur) + min(satisfaction.education, needs.education) + min(satisfaction.safety, satisfaction.safety))/totalNeeds*0.3;
     }
     print(happiness);
     satisfaction.health = 0;
+    satisfaction.natur = 0;
+    satisfaction.education = 0;
+    satisfaction.safety = 0;
 }
 
 function update() {
