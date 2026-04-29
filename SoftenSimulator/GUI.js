@@ -265,10 +265,11 @@ function mouseClicked() {
             selected = Politi;
             selectedarray = buildings.politier;
         } else if (mouseX - xselscroll >= 730 && mouseX - xselscroll <= 790 && mouseY >= 540){
+            print("ikeas");
             selected = IKEA;
             selectedarray = buildings.IKEAer;
         } else if (mouseX - xselscroll >= 810 && mouseX - xselscroll <= 870 && mouseY >= 540){
-            selected = bank;
+            selected = Bank;
             selectedarray = buildings.banke;
         } else if (mouseX - xselscroll >= 890 && mouseX - xselscroll <= 950 && mouseY >= 540){
             selected = Wtc;

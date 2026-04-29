@@ -140,8 +140,8 @@ class Kontor extends Building {
 }
 
 class Storkontor extends Building {
-    static sizex = 5;
-    static sizey = 3;
+    static sizex = 6;
+    static sizey = 2;
     static price = 15000;
     static maxJobs = 10;
     static income = 24;    
@@ -151,7 +151,7 @@ class Storkontor extends Building {
         this.maxJobs = Storkontor.maxJobs;
         this.cashProd = Storkontor.income/Storkontor.maxJobs;
         this.doorX = this.x;
-        this.doorY = this.y+3;
+        this.doorY = this.y+2;
     }
 
     draw() {
@@ -174,8 +174,8 @@ class Storkontor extends Building {
 }
 
 class fabrik extends Building {
-    static sizex = 5;
-    static sizey = 3;
+    static sizex = 6;
+    static sizey = 5;
     static price = 24000;
     static maxJobs = 60;
     static income = 120;    
@@ -185,7 +185,7 @@ class fabrik extends Building {
         this.maxJobs = fabrik.maxJobs;
         this.cashProd = fabrik.income/fabrik.maxJobs;
         this.doorX = this.x;
-        this.doorY = this.y+3;
+        this.doorY = this.y+5;
     }
 
     draw() {
@@ -208,8 +208,8 @@ class fabrik extends Building {
 }
 
 class IKEA extends Building {
-    static sizex = 3;
-    static sizey = 3;
+    static sizex = 10;
+    static sizey = 10;
     static price = 50000;
     static maxJobs = 30;
     static income = 80;    
@@ -218,12 +218,12 @@ class IKEA extends Building {
         super(x, y, selected);
         this.maxJobs = IKEA.maxJobs;
         this.cashProd = IKEA.income/IKEA.maxJobs;
-        this.doorX = this.x+1;
-        this.doorY = this.y+3;
+        this.doorX = this.x;
+        this.doorY = this.y+10;
     }
 
     draw() {
-        image(kontor1img,this.x*z0, this.y*z0);
+        image(ikeaimg,this.x*z0, this.y*z0);
     }
 
     update() {
@@ -242,8 +242,8 @@ class IKEA extends Building {
 }
 
 class Bank extends Building {
-    static sizex = 3;
-    static sizey = 3;
+    static sizex = 8;
+    static sizey = 5;
     static price = 100000;
     static maxJobs = 40;
     static income = 140;    
@@ -252,12 +252,12 @@ class Bank extends Building {
         super(x, y, selected);
         this.maxJobs = Bank.maxJobs;
         this.cashProd = Bank.income/Bank.maxJobs;
-        this.doorX = this.x+1;
-        this.doorY = this.y+3;
+        this.doorX = this.x;
+        this.doorY = this.y+5;
     }
 
     draw() {
-        image(kontor1img,this.x*z0, this.y*z0);
+        image(bankimg,this.x*z0, this.y*z0);
     }
 
     update() {
@@ -276,8 +276,8 @@ class Bank extends Building {
 }
 
 class Wtc extends Building {
-    static sizex = 3;
-    static sizey = 3;
+    static sizex = 5;
+    static sizey = 15;
     static price = 500000;
     static maxJobs = 100;
     static income = 400;   
@@ -286,12 +286,12 @@ class Wtc extends Building {
         super(x, y, selected);
         this.maxJobs = Wtc.maxJobs;
         this.cashProd = Wtc.income/Wtc.maxJobs;
-        this.doorX = this.x+1;
-        this.doorY = this.y+3;
+        this.doorX = this.x;
+        this.doorY = this.y+15;
     }
 
     draw() {
-        image(kontor1img,this.x*z0, this.y*z0);
+        image(wtcimg,this.x*z0, this.y*z0);
     }
 
     update() {
@@ -345,6 +345,118 @@ class Hospital extends Building {
         text("workers: " + Hospital.maxJobs, (x+5)*z - xscroll*z, (y+36)*z - yscroll*z);
     }
 }
+
+class Park extends Building {
+    static sizex = 3;
+    static sizey = 3;
+    static price = 10000;
+    static buildtime = 7;
+    static maxJobs = 1;
+    static income = -35;
+    constructor(x, y, selected) {
+        super(x, y, selected);
+        this.maxJobs = Park.maxJobs;
+        this.cashProd = Park.income/Park.maxJobs;
+        this.doorX = this.x+1;
+        this.doorY = this.y+3;
+    }
+
+    update() {
+        jobs += this.maxJobs;
+        this.graph = BFS(this.doorX, this.doorY);
+    }
+
+    draw() {
+        image(parkimg, this.x*z0, this.y*z0);
+    }
+
+    produce(prod) {
+        satisfaction.health += prod;
+    }
+
+    static display(x,y) {
+        fill(0);
+        textSize(14*z);
+        text("cost: " + Park.price, (x+5)*z - xscroll*z, (y+12)*z - yscroll*z);
+        text("buildtime: " + Park.buildtime, (x+5)*z - xscroll*z, (y+24)*z - yscroll*z);
+        text("workers: " + Park.maxJobs, (x+5)*z - xscroll*z, (y+36)*z - yscroll*z);
+    }
+}
+
+class Skole extends Building {
+    static sizex = 8;
+    static sizey = 3;
+    static price = 10000;
+    static buildtime = 7;
+    static maxJobs = 1;
+    static income = -35;
+    constructor(x, y, selected) {
+        super(x, y, selected);
+        this.maxJobs = Park.maxJobs;
+        this.cashProd = Park.income/Park.maxJobs;
+        this.doorX = this.x+2;
+        this.doorY = this.y+3;
+    }
+
+    update() {
+        jobs += this.maxJobs;
+        this.graph = BFS(this.doorX, this.doorY);
+    }
+
+    draw() {
+        image(skoleimg, this.x*z0, this.y*z0);
+    }
+
+    produce(prod) {
+        satisfaction.health += prod;
+    }
+
+    static display(x,y) {
+        fill(0);
+        textSize(14*z);
+        text("cost: " + Skole.price, (x+5)*z - xscroll*z, (y+12)*z - yscroll*z);
+        text("buildtime: " + Skole.buildtime, (x+5)*z - xscroll*z, (y+24)*z - yscroll*z);
+        text("workers: " + Skole.maxJobs, (x+5)*z - xscroll*z, (y+36)*z - yscroll*z);
+    }
+}
+
+class Politi extends Building {
+    static sizex = 6;
+    static sizey = 4;
+    static price = 10000;
+    static buildtime = 7;
+    static maxJobs = 1;
+    static income = -35;
+    constructor(x, y, selected) {
+        super(x, y, selected);
+        this.maxJobs = Politi.maxJobs;
+        this.cashProd = Politi.income/Politi.maxJobs;
+        this.doorX = this.x+3;
+        this.doorY = this.y+4;
+    }
+
+    update() {
+        jobs += this.maxJobs;
+        this.graph = BFS(this.doorX, this.doorY);
+    }
+
+    draw() {
+        image(politiimg, this.x*z0, this.y*z0);
+    }
+
+    produce(prod) {
+        satisfaction.health += prod;
+    }
+
+    static display(x,y) {
+        fill(0);
+        textSize(14*z);
+        text("cost: " + Park.price, (x+5)*z - xscroll*z, (y+12)*z - yscroll*z);
+        text("buildtime: " + Park.buildtime, (x+5)*z - xscroll*z, (y+24)*z - yscroll*z);
+        text("workers: " + Park.maxJobs, (x+5)*z - xscroll*z, (y+36)*z - yscroll*z);
+    }
+}
+
 
 class Vej extends Building{
     static price = 100;
