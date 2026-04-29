@@ -137,6 +137,74 @@ class Kontor extends Building {
     }
 }
 
+class Storkontor extends Building {
+    static sizex = 5;
+    static sizey = 3;
+    static price = 4000;
+    static maxJobs = 6
+    static income = 12;    
+    static buildtime = 3;
+    constructor(x, y, selected) {
+        super(x, y, selected);
+        this.maxJobs = Storkontor.maxJobs;
+        this.cashProd = Storkontor.income/Storkontor.maxJobs;
+        this.doorX = this.x;
+        this.doorY = this.y+3;
+    }
+
+    draw() {
+        image(kontor2img,this.x*z0, this.y*z0);
+    }
+
+    update() {
+        jobs += this.maxJobs;
+        this.graph = BFS(this.doorX, this.doorY);
+    }
+
+    static display(x,y) {
+        fill(0);
+        textSize(14*z);
+        text("cost: " + Storkontor.price, (x+5)*z - xscroll*z, (y+12)*z - yscroll*z);
+        text("buildtime: " + Storkontor.buildtime, (x+5)*z - xscroll*z, (y+24)*z - yscroll*z);
+        text("workers " + Storkontor.maxJobs, (x+5)*z - xscroll*z, (y+36)*z - yscroll*z);
+        text("income: " + Storkontor.income, (x+5)*z - xscroll*z, (y+48)*z - yscroll*z);
+    }
+}
+
+class fabrik extends Building {
+    static sizex = 5;
+    static sizey = 3;
+    static price = 4000;
+    static maxJobs = 6
+    static income = 12;    
+    static buildtime = 3;
+    constructor(x, y, selected) {
+        super(x, y, selected);
+        this.maxJobs = fabrik.maxJobs;
+        this.cashProd = fabrik.income/fabrik.maxJobs;
+        this.doorX = this.x;
+        this.doorY = this.y+3;
+    }
+
+    draw() {
+        image(fabrikimg,this.x*z0, this.y*z0);
+    }
+
+    update() {
+        jobs += this.maxJobs;
+        this.graph = BFS(this.doorX, this.doorY);
+    }
+
+    static display(x,y) {
+        fill(0);
+        textSize(14*z);
+        text("cost: " + fabrik.price, (x+5)*z - xscroll*z, (y+12)*z - yscroll*z);
+        text("buildtime: " + fabrik.buildtime, (x+5)*z - xscroll*z, (y+24)*z - yscroll*z);
+        text("workers " + fabrik.maxJobs, (x+5)*z - xscroll*z, (y+36)*z - yscroll*z);
+        text("income: " + fabrik.income, (x+5)*z - xscroll*z, (y+48)*z - yscroll*z);
+    }
+}
+
 class Hospital extends Building {
     static sizex = 5;
     static sizey = 3;
