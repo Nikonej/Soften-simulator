@@ -181,7 +181,7 @@ function GUI(){
                 }
             pop;
         break;
-        case wtc:
+        case Wtc:
             push;
                 fill(170, 240, 30, 100);
                 rect((890 - xscroll + xselscroll)*z, (550 - yscroll)*z,60*z,40*z);
@@ -218,7 +218,7 @@ function GUI(){
         } else if (mouseX - xselscroll >= 810 && mouseX - xselscroll <= 870 && mouseY >= 540){
             showStats(Bank);
         } else if (mouseX - xselscroll >= 890 && mouseX - xselscroll <= 950 && mouseY >= 540){
-            showStats(wtc);
+            showStats(Wtc);
         }
     }
 }
@@ -271,7 +271,7 @@ function mouseClicked() {
             selected = bank;
             selectedarray = buildings.banke;
         } else if (mouseX - xselscroll >= 890 && mouseX - xselscroll <= 950 && mouseY >= 540){
-            selected = wtc;
+            selected = Wtc;
             selectedarray = buildings.wtcer;
         }
     } else {
