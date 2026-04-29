@@ -21,7 +21,7 @@ function GUI(){
     image(kontor1img, (90 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60 * z, 40 * z);
     image(hotel1img, (170 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60 * z, 40 * z);
     image(hospitalimg, (250 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60 * z, 40 * z);
-    image(parkimg, (330 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60 * z, 40 * z);
+    image(parkimg, (970 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60 * z, 40 * z);
     image(skoleimg, (410 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60 * z, 40 * z);
     image(politiimg, (490 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60 * z, 40 * z);
     image(kontor2img, (570 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60 * z, 40 * z);
@@ -104,6 +104,28 @@ function GUI(){
                 }
             pop;
         break;
+        case fabrik:
+            push;
+                fill(170, 240, 30, 100);
+                rect((650 - xscroll + xselscroll)*z, (550 - yscroll)*z,60*z,40*z);
+                if (mouseY < 500){
+                    tint(255,177);
+                    image(fabrikimg, x*z0, y*z0, selected.sizex*z0, selected.sizey*z0);
+                    tint(255,255);
+                }
+            pop;
+        break;
+        case Storkontor:
+            push;
+                fill(170, 240, 30, 100);
+                rect((570 - xscroll + xselscroll)*z, (550 - yscroll)*z,60*z,40*z);
+                if (mouseY < 500){
+                    tint(255,177);
+                    image(kontor2img, x*z0, y*z0, selected.sizex*z0, selected.sizey*z0);
+                    tint(255,255);
+                }
+            pop;
+        break;
     }
     
     if (mouseY>500){
@@ -115,7 +137,11 @@ function GUI(){
             showStats(Hotel);
         } else if (mouseX - xselscroll >= 250 && mouseX - xselscroll <= 310 && mouseY >= 540){
             showStats(Hospital);
-        } 
+        } else if (mouseX - xselscroll >= 660 && mouseX - xselscroll <= 720 && mouseY >= 540){
+            showStats(fabrik);
+        } else if (mouseX - xselscroll >= 570 && mouseX - xselscroll <= 630 && mouseY >= 540){
+            showStats(Storkontor);
+        }   
     }
 }
 
@@ -144,6 +170,12 @@ function mouseClicked() {
             selectedarray = buildings.hospitaler;
         } else if (mouseX - xselscroll >= 330 && mouseX - xselscroll <= 390 && mouseY >= 540){
             selected = Vej;
+            selectedarray = buildings.veje;
+        } else if (mouseX - xselscroll >= 660 && mouseX - xselscroll <= 720 && mouseY >= 540){
+            selected = fabrik;
+            selectedarray = buildings.veje;
+        } else if (mouseX - xselscroll >= 570 && mouseX - xselscroll <= 630 && mouseY >= 540){
+            selected = Storkontor;
             selectedarray = buildings.veje;
         }
     } else {
