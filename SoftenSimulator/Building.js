@@ -76,6 +76,8 @@ class Hus extends Building {
         text("cost: " + Hus.price, (x+5)*z - xscroll*z, (y+12)*z - yscroll*z);
         text("buildtime: " + Hus.buildtime, (x+5)*z - xscroll*z, (y+24)*z - yscroll*z);
         text("housing: " + Hus.housing, (x+5)*z - xscroll*z, (y+36)*z - yscroll*z);
+        text("Hus", (x+35)*z - xscroll*z, (y+70)*z - yscroll*z);
+
     }
 }
 
@@ -102,6 +104,8 @@ class Hotel extends Building {
         text("cost: " + Hotel.price, (x+5)*z - xscroll*z, (y+12)*z - yscroll*z);
         text("buildtime: " + Hotel.buildtime, (x+5)*z - xscroll*z, (y+24)*z - yscroll*z);
         text("housing: " + Hotel.housing, (x+5)*z - xscroll*z, (y+36)*z - yscroll*z);
+        text("Hotel", (x+35)*z - xscroll*z, (y+70)*z - yscroll*z);
+
     }
 }
 
@@ -136,6 +140,8 @@ class Kontor extends Building {
         text("buildtime: " + Kontor.buildtime, (x+5)*z - xscroll*z, (y+24)*z - yscroll*z);
         text("workers " + Kontor.maxJobs, (x+5)*z - xscroll*z, (y+36)*z - yscroll*z);
         text("income: " + Kontor.income, (x+5)*z - xscroll*z, (y+48)*z - yscroll*z);
+        text("Kontor", (x+35)*z - xscroll*z, (y+70)*z - yscroll*z);
+
     }
 }
 
@@ -170,6 +176,8 @@ class Storkontor extends Building {
         text("buildtime: " + Storkontor.buildtime, (x+5)*z - xscroll*z, (y+24)*z - yscroll*z);
         text("workers " + Storkontor.maxJobs, (x+5)*z - xscroll*z, (y+36)*z - yscroll*z);
         text("income: " + Storkontor.income, (x+5)*z - xscroll*z, (y+48)*z - yscroll*z);
+        text("Stort kontor", (x+25)*z - xscroll*z, (y+70)*z - yscroll*z);
+
     }
 }
 
@@ -204,6 +212,8 @@ class fabrik extends Building {
         text("buildtime: " + fabrik.buildtime, (x+5)*z - xscroll*z, (y+24)*z - yscroll*z);
         text("workers " + fabrik.maxJobs, (x+5)*z - xscroll*z, (y+36)*z - yscroll*z);
         text("income: " + fabrik.income, (x+5)*z - xscroll*z, (y+48)*z - yscroll*z);
+        text("fabrik", (x+35)*z - xscroll*z, (y+70)*z - yscroll*z);
+
     }
 }
 
@@ -238,6 +248,8 @@ class IKEA extends Building {
         text("buildtime: " + IKEA.buildtime, (x+5)*z - xscroll*z, (y+24)*z - yscroll*z);
         text("workers " + IKEA.maxJobs, (x+5)*z - xscroll*z, (y+36)*z - yscroll*z);
         text("income: " + IKEA.income, (x+5)*z - xscroll*z, (y+48)*z - yscroll*z);
+        text("IKEA", (x+35)*z - xscroll*z, (y+70)*z - yscroll*z);
+
     }
 }
 
@@ -272,6 +284,8 @@ class Bank extends Building {
         text("buildtime: " + Bank.buildtime, (x+5)*z - xscroll*z, (y+24)*z - yscroll*z);
         text("workers " + Bank.maxJobs, (x+5)*z - xscroll*z, (y+36)*z - yscroll*z);
         text("income: " + Bank.income, (x+5)*z - xscroll*z, (y+48)*z - yscroll*z);
+        text("Bank", (x+35)*z - xscroll*z, (y+70)*z - yscroll*z);
+
     }
 }
 
@@ -306,6 +320,8 @@ class Wtc extends Building {
         text("buildtime: " + Wtc.buildtime, (x+5)*z - xscroll*z, (y+24)*z - yscroll*z);
         text("workers " + Wtc.maxJobs, (x+5)*z - xscroll*z, (y+36)*z - yscroll*z);
         text("income: " + Wtc.income, (x+5)*z - xscroll*z, (y+48)*z - yscroll*z);
+        text("World trade center", (x+3)*z - xscroll*z, (y+70)*z - yscroll*z);
+
     }
 }
 
@@ -343,6 +359,8 @@ class Hospital extends Building {
         text("cost: " + Hospital.price, (x+5)*z - xscroll*z, (y+12)*z - yscroll*z);
         text("buildtime: " + Hospital.buildtime, (x+5)*z - xscroll*z, (y+24)*z - yscroll*z);
         text("workers: " + Hospital.maxJobs, (x+5)*z - xscroll*z, (y+36)*z - yscroll*z);
+        text("Hospital", (x+35)*z - xscroll*z, (y+70)*z - yscroll*z);
+
     }
 }
 
@@ -380,6 +398,8 @@ class Park extends Building {
         text("cost: " + Park.price, (x+5)*z - xscroll*z, (y+12)*z - yscroll*z);
         text("buildtime: " + Park.buildtime, (x+5)*z - xscroll*z, (y+24)*z - yscroll*z);
         text("workers: " + Park.maxJobs, (x+5)*z - xscroll*z, (y+36)*z - yscroll*z);
+        text("Park", (x+35)*z - xscroll*z, (y+70)*z - yscroll*z);
+
     }
 }
 
@@ -417,6 +437,8 @@ class Skole extends Building {
         text("cost: " + Skole.price, (x+5)*z - xscroll*z, (y+12)*z - yscroll*z);
         text("buildtime: " + Skole.buildtime, (x+5)*z - xscroll*z, (y+24)*z - yscroll*z);
         text("workers: " + Skole.maxJobs, (x+5)*z - xscroll*z, (y+36)*z - yscroll*z);
+        text("Skole", (x+35)*z - xscroll*z, (y+70)*z - yscroll*z);
+
     }
 }
 
@@ -454,6 +476,7 @@ class Politi extends Building {
         text("cost: " + Politi.price, (x+5)*z - xscroll*z, (y+12)*z - yscroll*z);
         text("buildtime: " + Politi.buildtime, (x+5)*z - xscroll*z, (y+24)*z - yscroll*z);
         text("workers: " + Politi.maxJobs, (x+5)*z - xscroll*z, (y+36)*z - yscroll*z);
+        text("Politi", (x+35)*z - xscroll*z, (y+70)*z - yscroll*z);
     }
 }
 
@@ -472,5 +495,13 @@ class Vej extends Building{
             fill(170);
             rect(this.x*z0, this.y*z0, z0, z0);
         pop();
+    }
+    static display(x,y) {
+        fill(0);
+        textSize(14*z);
+        text("cost pr vej: " + Vej.price, (x+5)*z - xscroll*z, (y+12)*z - yscroll*z);
+        text("buildtime: " + Vej.buildtime, (x+5)*z - xscroll*z, (y+24)*z - yscroll*z);
+        text("Vej", (x+35)*z - xscroll*z, (y+70)*z - yscroll*z);
+
     }
 }
