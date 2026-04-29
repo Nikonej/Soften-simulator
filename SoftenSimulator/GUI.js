@@ -13,9 +13,10 @@ function GUI(){
         fill(255);
         textSize(14*z);
         text("Population: " + population.length, (10 - xscroll)*z, (512 - yscroll)*z);
-        text("money: " + money, (150 - xscroll)*z, (512 - yscroll)*z);
+        text("money: " + floor(money), (150 - xscroll)*z, (512 - yscroll)*z);
         text("workers: " + workers, (300 - xscroll)*z, (512 - yscroll)*z);
         text("jobs: " + jobs, (450 - xscroll)*z, (512 - yscroll)*z);
+        text("happiness: " + happiness, (600 - xscroll)*z, (512 - yscroll));
     pop();
     image(husimg, (10 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60*z, 40*z);
     image(kontor1img, (90 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60 * z, 40 * z);
@@ -203,6 +204,8 @@ function GUI(){
             showStats(Hotel);
         } else if (mouseX - xselscroll >= 250 && mouseX - xselscroll <= 310 && mouseY >= 540){
             showStats(Hospital);
+        } else if (mouseX - xselscroll >= 330 && mouseX - xselscroll <= 390 && mouseY >= 540){
+            showStats(Vej);
         } else if (mouseX - xselscroll >= 660 && mouseX - xselscroll <= 720 && mouseY >= 540){
             showStats(fabrik);
         } else if (mouseX - xselscroll >= 570 && mouseX - xselscroll <= 630 && mouseY >= 540){
