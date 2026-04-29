@@ -126,6 +126,72 @@ function GUI(){
                 }
             pop;
         break;
+        case Park:
+            push;
+                fill(170, 240, 30, 100);
+                rect((970 - xscroll + xselscroll)*z, (550 - yscroll)*z,60*z,40*z);
+                if (mouseY < 500){
+                    tint(255,177);
+                    image(parkimg, x*z0, y*z0, selected.sizex*z0, selected.sizey*z0);
+                    tint(255,255);
+                }
+            pop;
+        break;
+        case Skole:
+            push;
+                fill(170, 240, 30, 100);
+                rect((410 - xscroll + xselscroll)*z, (550 - yscroll)*z,60*z,40*z);
+                if (mouseY < 500){
+                    tint(255,177);
+                    image(skoleimg, x*z0, y*z0, selected.sizex*z0, selected.sizey*z0);
+                    tint(255,255);
+                }
+            pop;
+        break;
+        case Politi:
+            push;
+                fill(170, 240, 30, 100);
+                rect((490 - xscroll + xselscroll)*z, (550 - yscroll)*z,60*z,40*z);
+                if (mouseY < 500){
+                    tint(255,177);
+                    image(politiimg, x*z0, y*z0, selected.sizex*z0, selected.sizey*z0);
+                    tint(255,255);
+                }
+            pop;
+        break;
+        case IKEA:
+            push;
+                fill(170, 240, 30, 100);
+                rect((730 - xscroll + xselscroll)*z, (550 - yscroll)*z,60*z,40*z);
+                if (mouseY < 500){
+                    tint(255,177);
+                    image(kontor2img, x*z0, y*z0, selected.sizex*z0, selected.sizey*z0);
+                    tint(255,255);
+                }
+            pop;
+        break;
+        case Bank:
+            push;
+                fill(170, 240, 30, 100);
+                rect((810 - xscroll + xselscroll)*z, (550 - yscroll)*z,60*z,40*z);
+                if (mouseY < 500){
+                    tint(255,177);
+                    image(bankimg, x*z0, y*z0, selected.sizex*z0, selected.sizey*z0);
+                    tint(255,255);
+                }
+            pop;
+        break;
+        case wtc:
+            push;
+                fill(170, 240, 30, 100);
+                rect((890 - xscroll + xselscroll)*z, (550 - yscroll)*z,60*z,40*z);
+                if (mouseY < 500){
+                    tint(255,177);
+                    image(wtcimg, x*z0, y*z0, selected.sizex*z0, selected.sizey*z0);
+                    tint(255,255);
+                }
+            pop;
+        break;
     }
     
     if (mouseY>500){
@@ -141,7 +207,19 @@ function GUI(){
             showStats(fabrik);
         } else if (mouseX - xselscroll >= 570 && mouseX - xselscroll <= 630 && mouseY >= 540){
             showStats(Storkontor);
-        }   
+        } else if (mouseX - xselscroll >= 970 && mouseX - xselscroll <= 1030 && mouseY >= 540){
+            showStats(Park);
+        } else if (mouseX - xselscroll >= 410 && mouseX - xselscroll <= 470 && mouseY >= 540){
+            showStats(Skole);
+        } else if (mouseX - xselscroll >= 490 && mouseX - xselscroll <= 550 && mouseY >= 540){
+            showStats(Politi);
+        } else if (mouseX - xselscroll >= 730 && mouseX - xselscroll <= 790 && mouseY >= 540){
+            showStats(IKEA);
+        } else if (mouseX - xselscroll >= 810 && mouseX - xselscroll <= 870 && mouseY >= 540){
+            showStats(Bank);
+        } else if (mouseX - xselscroll >= 890 && mouseX - xselscroll <= 950 && mouseY >= 540){
+            showStats(wtc);
+        }
     }
 }
 
@@ -173,10 +251,28 @@ function mouseClicked() {
             selectedarray = buildings.veje;
         } else if (mouseX - xselscroll >= 660 && mouseX - xselscroll <= 720 && mouseY >= 540){
             selected = fabrik;
-            selectedarray = buildings.veje;
+            selectedarray = buildings.fabrikker;
         } else if (mouseX - xselscroll >= 570 && mouseX - xselscroll <= 630 && mouseY >= 540){
             selected = Storkontor;
-            selectedarray = buildings.veje;
+            selectedarray = buildings.storKontore;
+        } else if (mouseX - xselscroll >= 970 && mouseX - xselscroll <= 1030 && mouseY >= 540){
+            selected = Park;
+            selectedarray = buildings.parker;
+        } else if (mouseX - xselscroll >= 410 && mouseX - xselscroll <= 470 && mouseY >= 540){
+            selected = Skole;
+            selectedarray = buildings.skoler;
+        } else if (mouseX - xselscroll >= 490 && mouseX - xselscroll <= 550 && mouseY >= 540){
+            selected = Politi;
+            selectedarray = buildings.politier;
+        } else if (mouseX - xselscroll >= 730 && mouseX - xselscroll <= 790 && mouseY >= 540){
+            selected = IKEA;
+            selectedarray = buildings.IKEAer;
+        } else if (mouseX - xselscroll >= 810 && mouseX - xselscroll <= 870 && mouseY >= 540){
+            selected = bank;
+            selectedarray = buildings.banke;
+        } else if (mouseX - xselscroll >= 890 && mouseX - xselscroll <= 950 && mouseY >= 540){
+            selected = wtc;
+            selectedarray = buildings.wtcer;
         }
     } else {
         if (grid[x][y] == false){

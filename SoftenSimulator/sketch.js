@@ -50,7 +50,13 @@ async function setup() {
         hospitaler: [],
         veje: [],
         fabrikker: [],
-        storkontore: []
+        storKontore: [],
+        parker: [],
+        skoler: [],
+        politier: [],
+        IKEAer: [],
+        banke: [],
+        wtcer: []
     }
     needs = {
         health: 0
