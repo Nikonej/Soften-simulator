@@ -1,6 +1,7 @@
 
 
 async function setup() {
+    //load alle billeder
     husimg = await loadImage('sprites/hus.png');
     hotel1img = await loadImage('sprites/Hotel1.png');
     kontor1img = await loadImage('sprites/kontor2.png');
@@ -14,7 +15,9 @@ async function setup() {
     fabrikimg = await loadImage('sprites/fabrik.png');
     bankimg = await loadImage('sprites/bank.png');
     wtcimg= await loadImage('sprites/wtc.png');
+    //tegn skærm
     createCanvas(800, 600);
+    //definer nødvendige variable
     loadNames();
     z0 = 60;
     zoom = z0;
@@ -29,12 +32,14 @@ async function setup() {
     happiness = 1;
     vejnet = [];
     haveHalfUpdated = true;
+    //lav et 100*100 grid til vej logik
     for (let i = 0; i<100; i++) {
         vejnet.push([]);
         for (let j = 0; j<100; j++) {
             vejnet[i].push(false);
         }
     }
+    //lav et 100*100 grid til bygninger
     grid = [];
     for (let i = 0; i<99; i++) {
         grid.push([]);
@@ -42,6 +47,7 @@ async function setup() {
             grid[i].push(false);
         }
     }
+    //opbevar alle bygninger
     buildings = {
         constructionsite: [],
         huse: [new Hus(5, 4, Hus), new Hus(1, 4, Hus)],
@@ -58,6 +64,7 @@ async function setup() {
         banke: [],
         wtcer: []
     }
+    //tilføj behov for at have et glæde system
     needs = {
         health: 0,
         natur: 0,
@@ -74,16 +81,15 @@ async function setup() {
     selectedarray = buildings.huse;
     //print(buildings.kontorer)
 
-    
+    //tilføj mennesker til at starte med
     population = [];
     for (let i=0; i<4; i++) {
         population.push(new Human(random(15,45), buildings.huse[0]));
     }
-    prioriteretArbejde = [buildings.kontorer, buildings.hospitaler];
-
 }
 
 function draw() {
+    //sæt framerate
     frameRate(30);
     time += gamespeed;
     translate(xscroll, yscroll);
