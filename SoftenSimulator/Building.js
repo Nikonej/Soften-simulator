@@ -30,6 +30,8 @@ class Building {
     }
 }
 
+
+
 class Constructionsite extends Building {
     constructor(x, y, selected, selectedarray) {
         super(x, y, selected);
@@ -107,7 +109,7 @@ class Kontor extends Building {
     static sizex = 3;
     static sizey = 3;
     static price = 4000;
-    static maxJobs = 6
+    static maxJobs = 6;
     static income = 12;    
     static buildtime = 3;
     constructor(x, y, selected) {
@@ -140,10 +142,10 @@ class Kontor extends Building {
 class Storkontor extends Building {
     static sizex = 5;
     static sizey = 3;
-    static price = 4000;
-    static maxJobs = 6
-    static income = 12;    
-    static buildtime = 3;
+    static price = 15000;
+    static maxJobs = 10;
+    static income = 24;    
+    static buildtime = 7;
     constructor(x, y, selected) {
         super(x, y, selected);
         this.maxJobs = Storkontor.maxJobs;
@@ -174,10 +176,10 @@ class Storkontor extends Building {
 class fabrik extends Building {
     static sizex = 5;
     static sizey = 3;
-    static price = 4000;
-    static maxJobs = 6
-    static income = 12;    
-    static buildtime = 3;
+    static price = 24000;
+    static maxJobs = 60;
+    static income = 120;    
+    static buildtime = 5;
     constructor(x, y, selected) {
         super(x, y, selected);
         this.maxJobs = fabrik.maxJobs;
@@ -202,6 +204,108 @@ class fabrik extends Building {
         text("buildtime: " + fabrik.buildtime, (x+5)*z - xscroll*z, (y+24)*z - yscroll*z);
         text("workers " + fabrik.maxJobs, (x+5)*z - xscroll*z, (y+36)*z - yscroll*z);
         text("income: " + fabrik.income, (x+5)*z - xscroll*z, (y+48)*z - yscroll*z);
+    }
+}
+
+class IKEA extends Building {
+    static sizex = 3;
+    static sizey = 3;
+    static price = 50000;
+    static maxJobs = 30;
+    static income = 80;    
+    static buildtime = 10;
+    constructor(x, y, selected) {
+        super(x, y, selected);
+        this.maxJobs = IKEA.maxJobs;
+        this.cashProd = IKEA.income/IKEA.maxJobs;
+        this.doorX = this.x+1;
+        this.doorY = this.y+3;
+    }
+
+    draw() {
+        image(kontor1img,this.x*z0, this.y*z0);
+    }
+
+    update() {
+        jobs += this.maxJobs;
+        this.graph = BFS(this.doorX, this.doorY);
+    }
+
+    static display(x,y) {
+        fill(0);
+        textSize(14*z);
+        text("cost: " + IKEA.price, (x+5)*z - xscroll*z, (y+12)*z - yscroll*z);
+        text("buildtime: " + IKEA.buildtime, (x+5)*z - xscroll*z, (y+24)*z - yscroll*z);
+        text("workers " + IKEA.maxJobs, (x+5)*z - xscroll*z, (y+36)*z - yscroll*z);
+        text("income: " + IKEA.income, (x+5)*z - xscroll*z, (y+48)*z - yscroll*z);
+    }
+}
+
+class Bank extends Building {
+    static sizex = 3;
+    static sizey = 3;
+    static price = 100000;
+    static maxJobs = 40;
+    static income = 140;    
+    static buildtime = 12;
+    constructor(x, y, selected) {
+        super(x, y, selected);
+        this.maxJobs = Bank.maxJobs;
+        this.cashProd = Bank.income/Bank.maxJobs;
+        this.doorX = this.x+1;
+        this.doorY = this.y+3;
+    }
+
+    draw() {
+        image(kontor1img,this.x*z0, this.y*z0);
+    }
+
+    update() {
+        jobs += this.maxJobs;
+        this.graph = BFS(this.doorX, this.doorY);
+    }
+
+    static display(x,y) {
+        fill(0);
+        textSize(14*z);
+        text("cost: " + Bank.price, (x+5)*z - xscroll*z, (y+12)*z - yscroll*z);
+        text("buildtime: " + Bank.buildtime, (x+5)*z - xscroll*z, (y+24)*z - yscroll*z);
+        text("workers " + Bank.maxJobs, (x+5)*z - xscroll*z, (y+36)*z - yscroll*z);
+        text("income: " + Bank.income, (x+5)*z - xscroll*z, (y+48)*z - yscroll*z);
+    }
+}
+
+class Wtc extends Building {
+    static sizex = 3;
+    static sizey = 3;
+    static price = 500000;
+    static maxJobs = 100;
+    static income = 400;   
+    static buildtime = 3;
+    constructor(x, y, selected) {
+        super(x, y, selected);
+        this.maxJobs = Wtc.maxJobs;
+        this.cashProd = Wtc.income/Wtc.maxJobs;
+        this.doorX = this.x+1;
+        this.doorY = this.y+3;
+    }
+
+    draw() {
+        image(kontor1img,this.x*z0, this.y*z0);
+    }
+
+    update() {
+        jobs += this.maxJobs;
+        this.graph = BFS(this.doorX, this.doorY);
+    }
+
+    static display(x,y) {
+        fill(0);
+        textSize(14*z);
+        text("cost: " + Wtc.price, (x+5)*z - xscroll*z, (y+12)*z - yscroll*z);
+        text("buildtime: " + Wtc.buildtime, (x+5)*z - xscroll*z, (y+24)*z - yscroll*z);
+        text("workers " + Wtc.maxJobs, (x+5)*z - xscroll*z, (y+36)*z - yscroll*z);
+        text("income: " + Wtc.income, (x+5)*z - xscroll*z, (y+48)*z - yscroll*z);
     }
 }
 
