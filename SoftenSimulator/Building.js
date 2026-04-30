@@ -501,7 +501,7 @@ class Vej extends Building{
         textSize(14*z);
         text("cost pr vej: " + Vej.price, (x+5)*z - xscroll*z, (y+12)*z - yscroll*z);
         text("buildtime: " + Vej.buildtime, (x+5)*z - xscroll*z, (y+24)*z - yscroll*z);
-        text("Vej", (x+35)*z - xscroll*z, (y+70)*z - yscroll*z);
+        text(" Veje forbinder \n bynginger og lader \n folk komme \n på arbejde", (x-2)*z - xscroll*z, (y+50)*z - yscroll*z);
 
     }
 }
