@@ -15,6 +15,10 @@ async function setup() {
     fabrikimg = await loadImage('sprites/fabrik.png');
     bankimg = await loadImage('sprites/bank.png');
     wtcimg= await loadImage('sprites/wtc.png');
+    speed1img= await loadImage('sprites/1speed.png');
+    speed2img= await loadImage('sprites/2speed.png');
+    speed3img= await loadImage('sprites/3speed.png');
+
     //tegn skærm
     createCanvas(800, 600);
     //definer nødvendige variable
