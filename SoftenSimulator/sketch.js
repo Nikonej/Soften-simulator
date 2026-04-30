@@ -32,7 +32,7 @@ async function setup() {
     jobs = 0;
     money = 50000;
     housing = 10;
-    gamespeed = 5;
+    gamespeed = 1;
     happiness = 1;
     vejnet = [];
     haveHalfUpdated = true;
