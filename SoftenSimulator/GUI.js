@@ -16,7 +16,7 @@ function GUI(){
         text("money: " + floor(money), (150 - xscroll)*z, (512 - yscroll)*z);
         text("workers: " + workers, (300 - xscroll)*z, (512 - yscroll)*z);
         text("jobs: " + jobs, (450 - xscroll)*z, (512 - yscroll)*z);
-        text("happiness: " + happiness, (600 - xscroll)*z, (512 - yscroll));
+        text("happiness: " + happiness, (600 - xscroll)*z, (512 - yscroll)*z);
     pop();
     image(husimg, (10 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60*z, 40*z);
     image(kontor1img, (90 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60 * z, 40 * z);
