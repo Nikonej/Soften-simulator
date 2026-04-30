@@ -430,7 +430,7 @@ class Skole extends Building {
     }
 
     produce() {
-        satisfaction.education += 0,4*happiness;
+        satisfaction.education += 0.4*happiness;
     }
 
     static display(x,y) {
@@ -470,7 +470,7 @@ class Politi extends Building {
     }
 
     produce() {
-        satisfaction.safety += 0,67*happiness;
+        satisfaction.safety += 0.67*happiness;
     }
 
     static display(x,y) {
