@@ -359,6 +359,7 @@ class Hospital extends Building {
         text("cost: " + Hospital.price, (x+5)*z - xscroll*z, (y+12)*z - yscroll*z);
         text("buildtime: " + Hospital.buildtime, (x+5)*z - xscroll*z, (y+24)*z - yscroll*z);
         text("workers: " + Hospital.maxJobs, (x+5)*z - xscroll*z, (y+36)*z - yscroll*z);
+        text("income: " + Hospital.income, (x+5)*z - xscroll*z, (y+48)*z - yscroll*z);
         text("Hospital", (x+35)*z - xscroll*z, (y+70)*z - yscroll*z);
 
     }
@@ -398,6 +399,7 @@ class Park extends Building {
         text("cost: " + Park.price, (x+5)*z - xscroll*z, (y+12)*z - yscroll*z);
         text("buildtime: " + Park.buildtime, (x+5)*z - xscroll*z, (y+24)*z - yscroll*z);
         text("workers: " + Park.maxJobs, (x+5)*z - xscroll*z, (y+36)*z - yscroll*z);
+        text("income: " + Park.income, (x+5)*z - xscroll*z, (y+48)*z - yscroll*z);
         text("Park", (x+35)*z - xscroll*z, (y+70)*z - yscroll*z);
 
     }
@@ -437,6 +439,7 @@ class Skole extends Building {
         text("cost: " + Skole.price, (x+5)*z - xscroll*z, (y+12)*z - yscroll*z);
         text("buildtime: " + Skole.buildtime, (x+5)*z - xscroll*z, (y+24)*z - yscroll*z);
         text("workers: " + Skole.maxJobs, (x+5)*z - xscroll*z, (y+36)*z - yscroll*z);
+        text("income: " + Skole.income, (x+5)*z - xscroll*z, (y+48)*z - yscroll*z);
         text("Skole", (x+35)*z - xscroll*z, (y+70)*z - yscroll*z);
 
     }
@@ -476,6 +479,7 @@ class Politi extends Building {
         text("cost: " + Politi.price, (x+5)*z - xscroll*z, (y+12)*z - yscroll*z);
         text("buildtime: " + Politi.buildtime, (x+5)*z - xscroll*z, (y+24)*z - yscroll*z);
         text("workers: " + Politi.maxJobs, (x+5)*z - xscroll*z, (y+36)*z - yscroll*z);
+        text("income: " + Politi.income, (x+5)*z - xscroll*z, (y+48)*z - yscroll*z);
         text("Politi", (x+35)*z - xscroll*z, (y+70)*z - yscroll*z);
     }
 }
