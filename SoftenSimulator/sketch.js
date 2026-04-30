@@ -160,7 +160,7 @@ function updateHappiness() {
         happiness = 1;
     } else {
         happiness *= 0.7
-        happiness += (min(satisfaction.health, needs.health) + min(satisfaction.natur, needs.natur) + min(satisfaction.education, needs.education) + min(satisfaction.safety, satisfaction.safety))/totalNeeds*0.3;
+        happiness += (min(satisfaction.health, needs.health) + min(satisfaction.natur, needs.natur) + min(satisfaction.education, needs.education) + min(satisfaction.safety, needs.safety))/totalNeeds*0.3;
     }
 
     lastSatisfaction.health = satisfaction.health;
