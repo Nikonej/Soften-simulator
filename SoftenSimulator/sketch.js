@@ -77,9 +77,14 @@ async function setup() {
         education: 0,
         safety: 0
     }
+    lastSatisfaction = {
+        health: 0,
+        natur: 0,
+        education: 0,
+        safety: 0
+    }
     selected = Hus;
     selectedarray = buildings.huse;
-    //print(buildings.kontorer)
 
     //tilføj mennesker til at starte med
     population = [];
@@ -150,7 +155,6 @@ function updateHappiness() {
     }
 
     totalNeeds = needs.health + needs.natur + needs.education + needs.safety;
-    print(totalNeeds);
 
     if (totalNeeds == 0) {
         happiness = 1;
@@ -158,7 +162,12 @@ function updateHappiness() {
         happiness *= 0.7
         happiness += (min(satisfaction.health, needs.health) + min(satisfaction.natur, needs.natur) + min(satisfaction.education, needs.education) + min(satisfaction.safety, satisfaction.safety))/totalNeeds*0.3;
     }
-    print(happiness);
+
+    lastSatisfaction.health = satisfaction.health;
+    lastSatisfaction.natur = satisfaction.natur;
+    lastSatisfaction.education = satisfaction.education;
+    lastSatisfaction.safety = satisfaction.safety;
+
     satisfaction.health = 0;
     satisfaction.natur = 0;
     satisfaction.education = 0;

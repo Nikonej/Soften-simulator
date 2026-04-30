@@ -331,7 +331,7 @@ class Hospital extends Building {
     static price = 10000;
     static buildtime = 2;
     static maxJobs = 5;
-    static income = -35;
+    static income = -7;
     constructor(x, y, selected) {
         super(x, y, selected);
         this.maxJobs = Hospital.maxJobs;

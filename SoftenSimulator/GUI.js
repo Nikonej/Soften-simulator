@@ -9,6 +9,7 @@ function GUI(){
     let y = floor((mouseY-yscroll)/zoom);
     z = z0/zoom
     rect((0 - xscroll)*z, (500 - yscroll)*z, 800*z, 200*z);
+    rect((600 - xscroll)*z, (0 - yscroll)*z, 200*z, 300*z);
     push();
         fill(255);
         textSize(14*z);
@@ -17,6 +18,12 @@ function GUI(){
         text("workers: " + workers, (300 - xscroll)*z, (512 - yscroll)*z);
         text("jobs: " + jobs, (450 - xscroll)*z, (512 - yscroll)*z);
         text("happiness: " + happiness, (600 - xscroll)*z, (512 - yscroll)*z);
+
+        text("Health: " + floor(lastSatisfaction.health) + "/" + needs.health, (680 - xscroll)*z, (20 - yscroll)*z);
+        text("Natur: " + floor(lastSatisfaction.natur) + "/" + needs.natur, (680 - xscroll)*z, (40 - yscroll)*z);
+        text("Education: " + floor(lastSatisfaction.education) + "/" + needs.education, (680 - xscroll)*z, (60 - yscroll)*z);
+        text("Safety: " + floor(lastSatisfaction.safety) + "/" + needs.safety, (680 - xscroll)*z, (80 - yscroll)*z);
+
     pop();
     image(husimg, (10 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60*z, 40*z);
     image(kontor1img, (90 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60 * z, 40 * z);
