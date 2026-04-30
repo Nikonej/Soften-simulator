@@ -456,7 +456,7 @@ class Politi extends Building {
         super(x, y, selected);
         this.maxJobs = Politi.maxJobs;
         this.cashProd = Politi.income/Politi.maxJobs;
-        this.doorX = this.x+3;
+        this.doorX = this.x+2;
         this.doorY = this.y+4;
     }
 
