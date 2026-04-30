@@ -125,8 +125,8 @@ function draw() {
 }
 
 function updateHappiness() {    
-    if (population.length > 10) {
-        needs.health = population.length-10;
+    if (population.length > 30) {
+        needs.health = population.length-30;
     } else {
         needs.health = 0;
     }

@@ -329,7 +329,7 @@ class Hospital extends Building {
     static sizex = 5;
     static sizey = 3;
     static price = 10000;
-    static buildtime = 7;
+    static buildtime = 2;
     static maxJobs = 5;
     static income = -35;
     constructor(x, y, selected) {
