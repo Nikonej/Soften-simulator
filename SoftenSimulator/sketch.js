@@ -96,9 +96,7 @@ async function setup() {
         population.push(new Human(random(15,45), buildings.huse[0]));
     }
     speedSlider = createSlider(1,3,2,0);
-    speedSlider.position(725,550);
-    speedSlider.style('width','140px');
-    speedSlider.style('appearance', 'none');
+    speedSlider.position(970,550);
 }
 
 function draw() {
