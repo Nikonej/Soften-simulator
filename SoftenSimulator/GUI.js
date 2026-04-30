@@ -17,7 +17,7 @@ function GUI(){
         text("money: " + floor(money), (150 - xscroll)*z, (512 - yscroll)*z);
         text("workers: " + workers, (300 - xscroll)*z, (512 - yscroll)*z);
         text("jobs: " + jobs, (450 - xscroll)*z, (512 - yscroll)*z);
-        text("happiness: " + happiness, (600 - xscroll)*z, (512 - yscroll)*z);
+        text("happiness: " + floor(happiness*100) + "%", (600 - xscroll)*z, (512 - yscroll)*z);
 
         text("Satisfaction:", (690 - xscroll)*z, (20 - yscroll)*z);
         text("Health: " + floor(lastSatisfaction.health) + "/" + needs.health, (675 - xscroll)*z, (40 - yscroll)*z);
