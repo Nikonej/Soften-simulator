@@ -196,20 +196,13 @@ function halfUpdate() {
 function keyPressed() {
     if (key == "+") {
         zoom += 1;
+        xscroll = xscroll*(zoom/(zoom-1))
+        yscroll = yscroll*(zoom/(zoom-1))
     }
     if (key == "-" && zoom > 1) {
         zoom -= 1;
-    }
-    if (key == "j") {
-        let pj = []
-        for (let i = 0; i<100; i++) {
-            pj.push([]);
-            for (let j = 0; j<100; j++) {
-                pj[i].push(false);
-            }
-        }
-        BFS(2,2, pj)
-        print(pj[10][4]);
+        xscroll = xscroll*(zoom/(zoom+1))
+        yscroll = yscroll*(zoom/(zoom+1))
     }
 }
 
