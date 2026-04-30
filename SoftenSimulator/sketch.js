@@ -97,6 +97,8 @@ async function setup() {
     }
     speedSlider = createSlider(1,3,2,0);
     speedSlider.position(725,550);
+    speedSlider.style('width','140px');
+    speedSlider.style('appearance', 'none');
 }
 
 function draw() {
