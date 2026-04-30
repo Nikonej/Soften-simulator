@@ -95,7 +95,7 @@ async function setup() {
     for (let i=0; i<4; i++) {
         population.push(new Human(random(15,45), buildings.huse[0]));
     }
-    speedSlider = createSlider(1,3);
+    speedSlider = createSlider(1,3,2,0);
     speedSlider.position(730,550);
 }
 
