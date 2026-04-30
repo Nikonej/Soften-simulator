@@ -18,13 +18,14 @@ function GUI(){
         text("workers: " + workers, (300 - xscroll)*z, (512 - yscroll)*z);
         text("jobs: " + jobs, (450 - xscroll)*z, (512 - yscroll)*z);
         text("happiness: " + floor(happiness*100) + "%", (600 - xscroll)*z, (512 - yscroll)*z);
+        text("gamespeed: ", (570 - xscroll)*z, (532 - yscroll)*z);
 
         text("Satisfaction:", (690 - xscroll)*z, (20 - yscroll)*z);
         text("Health: " + floor(lastSatisfaction.health) + "/" + needs.health, (675 - xscroll)*z, (40 - yscroll)*z);
         text("Natur: " + floor(lastSatisfaction.natur) + "/" + needs.natur, (675 - xscroll)*z, (60 - yscroll)*z);
         text("Education: " + floor(lastSatisfaction.education) + "/" + needs.education, (675 - xscroll)*z, (80 - yscroll)*z);
         text("Safety: " + floor(lastSatisfaction.safety) + "/" + needs.safety, (675 - xscroll)*z, (100 - yscroll)*z);
-
+ 
     pop();
     image(husimg, (10 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60*z, 40*z);
     image(kontor1img, (90 - xscroll + xselscroll)*z, (550 - yscroll)*z, 60 * z, 40 * z);
