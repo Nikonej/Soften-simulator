@@ -30,7 +30,7 @@ async function setup() {
     time = 0;
     workers = 0;
     jobs = 0;
-    money = 50000;
+    money = 5000;
     housing = 10;
     gamespeed = 1;
     happiness = 1;
