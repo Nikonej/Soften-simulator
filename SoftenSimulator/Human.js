@@ -109,22 +109,6 @@ class Human {
             if (job != "unemployed") {
                 this.job.activeJobs++;
             }
-            
-
-
-
-
-
-         /*   for (let i=0; i<prioriteretArbejde.length; i++) {
-                for (let j = 0; j<prioriteretArbejde[i].length; j++) {
-                    if (prioriteretArbejde[i][j].maxJobs > prioriteretArbejde[i][j].activeJobs) {
-                        prioriteretArbejde[i][j].activeJobs++;
-                        this.job = prioriteretArbejde[i][j];
-                        i = prioriteretArbejde.length;
-                        break;
-                    }
-                }
-            } */
         }
         if (this.job != "unemployed") {
             this.state = "goToWork";
